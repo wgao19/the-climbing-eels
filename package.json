@@ -1,0 +1,22 @@
+{
+  "name": "the-climbing-eels",
+  "version": "0.0.0",
+  "description": "The Climbing Eels site.",
+  "main": "index.js",
+  "repository": "git@github.com:wgao19/the-climbing-eels.git",
+  "author": "Wei Gao <wgao19@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "preact": "^8.2.7"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.18.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-standard-preact": "^1.1.6",
+    "eslint-plugin-import": "^2.9.0",
+    "node-sass": "^4.7.2"
+  }
+}

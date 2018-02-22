@@ -1,0 +1,42 @@
+@import '../style/mixins';
+@import '../style/colors';
+
+.page-home {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  &__left {
+    display: flex;
+    width: 50vw;
+    height: 100vh;
+    background: $yellow;
+  }
+  &__right {
+    width: 50vw;
+    height: 100vh;
+    background: $dark;
+  }
+}
+.page-home-left-content {
+  @include center-inner-objects;
+  flex-direction: column;
+  width: 100%;
+  &__header {
+    font-size: 2rem;
+    color: white;
+  }
+  &__text {
+    color: $light-yellow;
+  }
+}
+.page-home-right-content {
+  padding: 2rem;
+  &__header {
+    text-align: right;
+    height: 4rem;
+    line-height: 4rem;
+    text-transform: uppercase;
+    color: $light;
+    border-bottom: .5px solid rgba($light, .4);
+  }
+}

@@ -1,0 +1,21 @@
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+.expand {
+  flex-grow: 1;
+}
+
+.link-to-keep-parent-style {
+  color: currentColor;
+  text-decoration: inherit;
+}

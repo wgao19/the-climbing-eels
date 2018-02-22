@@ -1,0 +1,9 @@
+@mixin center-inner-objects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin box-shadow($color) {
+  box-shadow: 5px 10px 5px 10px $color;
+}

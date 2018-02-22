@@ -1,0 +1,11 @@
+@import 'normalize';
+@import 'typography';
+@import 'colors';
+@import 'utils';
+
+html, body {
+  font-size: 16px;    // root
+  font-family: $default-font;
+  color: $black80;
+  line-height: 1.2;
+}
