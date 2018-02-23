@@ -1,12 +1,11 @@
 import { h, Component } from 'preact';
-import loadGoogleCalendar from '../utils/GoogleCalendar';
+import UpcomingClimbs from './components/UpcomingClimbs';
 import './style.scss';
 
 export default class PageHome extends Component {
-  componentDidMount() {
-    console.log('component did mount, gapi is here: ', gapi);
-    loadGoogleCalendar();
-  }
+  // componentDidMount() {
+  //   loadGoogleCalendar();
+  // }
 
   render(props) {
     return (
@@ -15,7 +14,7 @@ export default class PageHome extends Component {
           <div className="page-home-left-content">
             <div className="page-home-left-content__header">hello eels</div>
             <div className="page-home-left-content__text">
-              eels are a couple of rock climbers
+              eels are a couple of avid rock climbers
             </div>
           </div>
         </div>
@@ -23,6 +22,7 @@ export default class PageHome extends Component {
           <div className="page-home-right-content">
             <div className="page-home-right-content__header">
               upcoming climbs
+              <UpcomingClimbs/>
             </div>
           </div>
         </div>
