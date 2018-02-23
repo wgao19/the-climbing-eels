@@ -2,19 +2,18 @@
 .climb-event {
   text-transform: capitalize;
   text-align: left;
-  //background: $light;
   margin-bottom: 1rem;
   border-radius: .2rem;
   padding: .7rem;
 
   &__header {
     color: $light-yellow;
-    border-bottom: 1px solid $light;
   }
   &__time, &__location {
     font-size: .8rem;
     color: rgba($light, .8);
+    padding: .5rem 1rem;
     line-height: 1.4;
-    padding-top: .5rem;
+    border-left: 2px solid rgba($light-yellow, .8);
   }
 }

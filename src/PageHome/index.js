@@ -20,7 +20,7 @@ export default class PageHome extends Component {
         </div>
         <div className="page-home__right">
           <div className="page-home-right-content">
-            <div className="page-home-right-content__header">
+            <div className="page-home-right-content__header serif">
               upcoming climbs
               <UpcomingClimbs/>
             </div>

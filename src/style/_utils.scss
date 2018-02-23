@@ -1,3 +1,4 @@
+@import 'typography';
 .container {
   width: 80%;
   margin: 0 auto;
@@ -18,4 +19,8 @@
 .link-to-keep-parent-style {
   color: currentColor;
   text-decoration: inherit;
+}
+
+.serif {
+  font-family: $serif;
 }
