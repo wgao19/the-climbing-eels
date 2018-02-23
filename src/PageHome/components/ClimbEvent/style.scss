@@ -2,12 +2,38 @@
 .climb-event {
   text-transform: capitalize;
   text-align: left;
-  margin-bottom: 1rem;
-  border-radius: .2rem;
-  padding: .7rem;
+  margin: .5rem 0;
+  padding: 1rem;
+  transition: all .5s ease;
+  border-radius: 2px;
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    border: rgba($light-yellow, .8) solid 4px;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    opacity: 0;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: opacity;
+    transition-property: opacity;
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
+
 
   &__header {
     color: $light-yellow;
+    height: 2rem;
+    line-height: 2rem;
   }
   &__time, &__location {
     font-size: .8rem;
