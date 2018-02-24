@@ -2,7 +2,7 @@
  * @flow
  * */
 import { h, Component } from 'preact';
-import { beautifulDateTime } from '../../../utils/beautifulDateTIme';
+import beautifulDateTime from '../../../utils/beautifulDateTime';
 import type { ClimbType } from '../../../types/ClimbTypes';
 import './style.scss';
 

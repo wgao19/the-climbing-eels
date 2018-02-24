@@ -9,6 +9,6 @@ const options = {
   minute: '2-digit',
 };
 
-export function beautifulDateTime(dateTime) {
+export default function beautifulDateTime(dateTime) {
   return dateTime.toLocaleTimeString(dateTime, options);
 }
