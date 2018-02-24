@@ -2,7 +2,7 @@
  * @flow
  * */
 import { h, Component } from 'preact';
-import { beautifulDateTime } from '../../../utils/DateTime';
+import { beautifulDateTime } from '../../../utils/beautifulDateTIme';
 import type { ClimbType } from '../../../types/ClimbTypes';
 import './style.scss';
 
@@ -11,7 +11,7 @@ type ClimbEventProps = {
 };
 
 class ClimbEvent extends Component {
-  render(props) {
+  render(props: ClimbEventProps) {
     const { summary, start, end, location } = props.climb;
     const displayStartTime = start.dateTime
       ? beautifulDateTime(new Date(start.dateTime))
@@ -21,11 +21,16 @@ class ClimbEvent extends Component {
       : end.date;
     return (
       <div className="climb-event">
-        <div className="climb-event__header">{summary}</div>
+        <div className="climb-event__header">
+          {summary}
+        </div>
         <div className="climb-event__time">
           {displayStartTime} - {displayEndTime}
         </div>
-        {location && <div className="climb-event__location">{location}</div>}
+        {location &&
+          <div className="climb-event__location">
+            {location}
+          </div>}
       </div>
     );
   }

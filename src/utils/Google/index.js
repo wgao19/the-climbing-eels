@@ -1,10 +1,10 @@
+import embedScript from '../embedScript';
+
 export default function initGoogle(cb) {
-  const script = document.createElement('script');
-  script.src = 'https://apis.google.com/js/client.js';
-
-  script.onload = () => {
-    gapi.load('client', cb);
-  };
-
-  document.body.appendChild(script);
+  embedScript({
+    src: 'https://apis.google.com/js/client.js',
+    onLoad: () => {
+      gapi.load('client', cb);
+    },
+  });
 }

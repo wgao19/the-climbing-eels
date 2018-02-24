@@ -3,10 +3,6 @@ import UpcomingClimbs from './components/UpcomingClimbs';
 import './style.scss';
 
 export default class PageHome extends Component {
-  // componentDidMount() {
-  //   loadGoogleCalendar();
-  // }
-
   render(props) {
     return (
       <div className="page-home">
@@ -22,7 +18,7 @@ export default class PageHome extends Component {
           <div className="page-home-right-content">
             <div className="page-home-right-content__header serif">
               upcoming climbs
-              <UpcomingClimbs/>
+              <UpcomingClimbs />
             </div>
           </div>
         </div>
