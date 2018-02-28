@@ -28,6 +28,7 @@ $break-large: 1024px;
   &__right {
     background: $dark;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     &::-webkit-scrollbar {
       display: none;
     }
