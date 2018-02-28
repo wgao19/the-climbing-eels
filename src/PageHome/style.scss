@@ -1,22 +1,45 @@
 @import '../style/mixins';
 @import '../style/colors';
 
+$break-large: 768px;
 .page-home {
   width: 100vw;
   height: 100vh;
   display: flex;
   cursor: default;
+  @media screen and (max-width: $break-large) {
+    flex-direction: column;
+  }
+  @media screen and (min-width: $break-large) {
+    flex-direction: row;
+  }
   &__left {
     display: flex;
-    width: 50vw;
-    height: 100vh;
     background: $yellow;
+    @media screen and (max-width: $break-large) {
+      width: 100vw;
+      height: 30vh;
+    }
+    @media screen and (min-width: $break-large) {
+      width: 30vw;
+      height: 100vh;
+    }
   }
   &__right {
-    width: 50vw;
-    height: 100vh;
     background: $dark;
     overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media screen and (max-width: $break-large) {
+      width: 100vw;
+      height: 70vh;
+    }
+    @media screen and (min-width: $break-large) {
+      width: 70vw;
+      height: 100vh;
+    }
   }
 }
 .page-home-left-content {
@@ -39,6 +62,6 @@
     line-height: 4rem;
     text-transform: uppercase;
     color: $light;
-    border-bottom: .5px solid rgba($light, .4);
+    border-bottom: 0.5px solid rgba($light, 0.4);
   }
 }
