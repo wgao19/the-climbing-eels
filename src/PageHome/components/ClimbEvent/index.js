@@ -21,16 +21,11 @@ class ClimbEvent extends Component {
       : end.date;
     return (
       <div className="climb-event">
-        <div className="climb-event__header">
-          {summary}
-        </div>
+        <div className="climb-event__header">{summary}</div>
         <div className="climb-event__time">
           {displayStartTime} - {displayEndTime}
         </div>
-        {location &&
-          <div className="climb-event__location">
-            {location}
-          </div>}
+        {location && <div className="climb-event__location">{location}</div>}
       </div>
     );
   }

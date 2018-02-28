@@ -7,7 +7,8 @@ export type GoogleUser = {
 };
 
 export type GoogleDate = {
-  date: string,
+  date?: string,
+  dateTime?: string,
 };
 
 export type GoogleAPIResult = {

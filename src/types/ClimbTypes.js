@@ -18,4 +18,6 @@ export type ClimbType = {
   summary: string,
   transparency: string,
   updated: string,
+  location?: string,
+  description?: string,
 };

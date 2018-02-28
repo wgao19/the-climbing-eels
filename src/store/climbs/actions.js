@@ -12,6 +12,8 @@ import type { Dispatch } from '../../types/Redux';
 
 export const LOAD_CLIMBS = createRequestTypes('LOAD_CLIMBS');
 
+declare var gapi: Object;
+
 async function apiLoadGoogleCalendarEvents() {
   await gapi.client.init({
     apiKey: API_KEY,
