@@ -1,7 +1,7 @@
 @import '../style/mixins';
 @import '../style/colors';
 
-$break-large: 768px;
+$break-large: 1024px;
 .page-home {
   width: 100vw;
   height: 100vh;
@@ -21,7 +21,7 @@ $break-large: 768px;
       height: 30vh;
     }
     @media screen and (min-width: $break-large) {
-      width: 30vw;
+      width: 40vw;
       height: 100vh;
     }
   }
@@ -37,7 +37,7 @@ $break-large: 768px;
       height: 70vh;
     }
     @media screen and (min-width: $break-large) {
-      width: 70vw;
+      width: 60vw;
       height: 100vh;
     }
   }
