@@ -20,4 +20,8 @@ export type ClimbType = {
   updated: string,
   location?: string,
   description?: string,
+
+  // modified by reducer
+  type?: string,
+  notes?: string,
 };

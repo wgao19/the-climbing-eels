@@ -12,7 +12,7 @@ type ClimbEventProps = {
 
 class ClimbEvent extends Component {
   render(props: ClimbEventProps) {
-    const { summary, start, end, location } = props.climb;
+    const { summary, start, end, location, type, notes } = props.climb;
     const displayStartTime = start.dateTime
       ? beautifulDateTime(new Date(start.dateTime))
       : start.date;
@@ -21,11 +21,15 @@ class ClimbEvent extends Component {
       : end.date;
     return (
       <div className="climb-event">
-        <div className="climb-event__header">{summary}</div>
+        <div className="climb-event__header">
+          {summary}
+          {type && <div className="climb-event__flag">{type}</div>}
+        </div>
         <div className="climb-event__time">
           {displayStartTime} - {displayEndTime}
         </div>
         {location && <div className="climb-event__location">{location}</div>}
+        {notes && <div className="climb-event__notes">{notes}</div>}
       </div>
     );
   }
