@@ -1,5 +1,6 @@
 import { h, Component } from 'preact';
 import UpcomingClimbs from './components/UpcomingClimbs';
+import InstagramLink from './components/InstagramLink';
 import './style.scss';
 
 export default class PageHome extends Component {
@@ -12,6 +13,7 @@ export default class PageHome extends Component {
             <div className="page-home-left-content__text">
               eels are a couple of avid rock climbers
             </div>
+            <InstagramLink className="page-home-left-content__instagram-link" />
           </div>
         </div>
         <div className="page-home__right">
