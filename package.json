@@ -42,6 +42,6 @@
     "redux-devtools-extension": "^2.13.2"
   },
   "scripts": {
-    "build": "parcel build src/index.js -d build"
+    "build": "parcel build src/index.js -d build --public-url ./"
   }
 }
