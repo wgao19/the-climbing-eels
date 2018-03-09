@@ -6,8 +6,8 @@ import {
   DISCOVERY_DOCS,
   SCOPES,
   CALENDAR_ID,
+  STATUS,
 } from '../../utils/Google/constants';
-import { STATUS } from '../../utils/Google/constants';
 import type { Dispatch } from '../../types/Redux';
 
 export const LOAD_CLIMBS = createRequestTypes('LOAD_CLIMBS');

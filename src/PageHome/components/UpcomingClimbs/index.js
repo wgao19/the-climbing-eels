@@ -8,10 +8,13 @@ import initGoogle from '../../../utils/Google';
 import ClimbEvent from '../ClimbEvent';
 import Loading from '../../../widgets/Loading';
 import { loadClimbs } from '../../../store/climbs/actions';
+import randomWait from '../../../utils/randomWait';
 
 class UpcomingClimbs extends Component {
   componentDidMount() {
-    initGoogle(this.props.loadClimbs);
+    randomWait(() => {
+      initGoogle(this.props.loadClimbs);
+    });
   }
 
   render(props: { upcomingClimbs: mixed[], loadClimbs: Function }) {
