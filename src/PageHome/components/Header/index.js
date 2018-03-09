@@ -9,7 +9,7 @@ class Header extends Component {
       <div className="eels-header">
         <div className="eels-header__main-text">hello eels</div>
         <span className="eels-header__secondary-text">
-          us eels ❤ climbing
+          us eels ♥ climbing
         </span>
         <InstagramLink className="eels-header__instagram-link" />
       </div>
