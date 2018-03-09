@@ -1,18 +1,25 @@
-
 @import '../../../style/colors';
 @import '../../../style/variables';
 
 .eels-header {
-  color: $dark;
   width: 100%;
   height: $eels-navbar-height;
-  line-height: $eels-navbar-height;
-  background: rgba($yellow, .9);
-  padding: 0 $eels-horizontal-padding;
-  position: relative;
+  background: $yellow;
   display: flex;
   align-items: center;
-  &__text {
+  @media (min-width: 1024px) {
+    padding: 0 $eels-horizontal-padding;
+  }
+  @media (max-width: 1024px) {
+    padding: 0 .5rem;
+    &__main-text {
+      display: none;
+  }
+  }
+  &__main-text {
+    color: $dark;
+  }
+  &__secondary-text {
     color: $light-yellow;
     margin-left: 1rem;
   }

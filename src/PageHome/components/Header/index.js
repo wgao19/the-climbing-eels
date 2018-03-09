@@ -7,9 +7,9 @@ class Header extends Component {
   render() {
     return (
       <div className="eels-header">
-        hello eels
-        <span className="eels-header__text">
-          eels are a couple of avid rock climbers
+        <div className="eels-header__main-text">hello eels</div>
+        <span className="eels-header__secondary-text">
+          us eels ❤ climbing
         </span>
         <InstagramLink className="eels-header__instagram-link" />
       </div>
