@@ -1,0 +1,30 @@
+@import '../../style/colors';
+
+.eels-breadcrumb {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.eels-breadcrumb-link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+  > span {
+    // for better looking underline
+    padding-bottom: .2rem;
+  }
+  &--active > span {
+    border-bottom: 1px solid $light-yellow;
+  }
+  &--disabled {
+    color: $light-yellow;
+    cursor: no-drop;
+  }
+  &:not(:last-child) {
+    &:after {
+      content: '/';
+      color: $light-yellow;
+      margin: 0.4rem;
+    }
+  }
+}
