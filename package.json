@@ -41,6 +41,6 @@
   },
   "scripts": {
     "build": "parcel build src/index.js -d build --public-url ./",
-    "deploy": "git pull --rebase && npm run build && sh scripts/deploy.sh"
+    "deploy": "git pull --rebase && npm install && npm run build && sh scripts/deploy.sh"
   }
 }
