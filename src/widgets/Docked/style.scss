@@ -1,0 +1,37 @@
+
+.eels-docked {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  transform: translate(-100%);
+  animation: slide-out 0.2s;
+  &--active {
+    animation: slide-in 0.3s forwards ease;
+    -webkit-animation: slide-in 0.3s forwards ease;
+  }
+  &--inactive {
+    animation: slide-out 0.3s forwards ease;
+    -webkit-animation: slide-out 0.3s forwards ease;
+  }
+}
+
+@keyframes slide-in {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(0%); }
+}
+
+@-webkit-keyframes slide-in {
+  0% { transform: translateY(-100%); }
+  100% { -webkit-transform: translateY(0%); }
+}
+
+@keyframes slide-out {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+@-webkit-keyframes slide-out {
+  0% { transform: translateY(0); }
+  100% { -webkit-transform: translateY(-100%); }
+}

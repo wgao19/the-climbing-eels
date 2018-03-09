@@ -26,7 +26,6 @@ class InstagramLink extends Component {
             </g>
           </svg>
         </div>
-        {/*<img src={instagramLogo} className="instagram-logo" />*/}
       </a>
     );
   }
