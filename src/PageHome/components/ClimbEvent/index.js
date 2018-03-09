@@ -1,5 +1,5 @@
 /**
- * @flow
+ * @flow @jsx h
  * */
 import { h, Component } from 'preact';
 import beautifulDateTime from '../../../utils/beautifulDateTime';

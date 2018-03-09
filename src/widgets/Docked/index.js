@@ -1,4 +1,7 @@
-// @flow
+/**
+ * @flow
+ * @jsx h
+ * */
 import  { h, Component } from 'preact';
 import cx from 'classnames';
 import './style.scss';

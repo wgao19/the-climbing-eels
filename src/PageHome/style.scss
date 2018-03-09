@@ -40,11 +40,11 @@
 }
 .page-home-bottom-content {
   padding: $eels-horizontal-padding;
+  min-height: 70vh;
   &__header {
     text-align: right;
     line-height: 4rem;
     text-transform: uppercase;
     color: $light;
-    border-bottom: 0.5px solid rgba($light, 0.4);
   }
 }

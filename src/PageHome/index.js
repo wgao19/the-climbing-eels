@@ -1,3 +1,4 @@
+// @flow @jsx h
 import { h, Component } from 'preact';
 import UpcomingClimbs from './components/UpcomingClimbs';
 import InstagramLink from './components/InstagramLink';
@@ -7,6 +8,8 @@ import Docked from '../widgets/Docked';
 import './style.scss';
 
 const DockedHeader = Docked(Header);
+
+// TODO: move to data
 const links = [
   {
     text: 'climbs',
@@ -24,7 +27,7 @@ export default class PageHome extends Component {
   render(props) {
     return (
       <div className="page-home">
-        <DockedHeader top={300} />
+        <DockedHeader top={234} />
         <div className="page-home__top">
           <div className="page-home-top-content">
             <div className="page-home-top-content__header">hello eels</div>
@@ -36,11 +39,11 @@ export default class PageHome extends Component {
           </div>
         </div>
         <div className="page-home__bottom">
-          <div className="page-home-bottom-content">
-            <div className="page-home-bottom-content__header serif">
+          <div className="page-home-bottom-content serif">
+            <div className="page-home-bottom-content__header">
               upcoming climbs
-              <UpcomingClimbs />
             </div>
+            <UpcomingClimbs />
           </div>
         </div>
       </div>

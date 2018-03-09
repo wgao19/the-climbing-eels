@@ -1,4 +1,4 @@
-// @flow
+// @flow @jsx h
 import { h, Component } from 'preact';
 import InstagramLink from '../InstagramLink';
 import './style.scss';

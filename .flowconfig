@@ -2,6 +2,7 @@
 .*/dist/.*
 
 [libs]
+flow-typed
 
 [options]
 module.name_mapper.extension='scss' -> '<PROJECT_ROOT>/src/__mock__/styleMock.js'
