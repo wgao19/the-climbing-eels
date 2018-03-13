@@ -5,6 +5,7 @@ import InstagramLink from './components/InstagramLink';
 import Header from './components/Header';
 import Breadcrumb from '../widgets/Breadcrumb';
 import Docked from '../widgets/Docked';
+import PreactMarkdown from '../packages/preact-markdown/src';
 import './style.scss';
 
 const DockedHeader = Docked(Header);
@@ -46,6 +47,8 @@ export default class PageHome extends Component {
             <UpcomingClimbs />
           </div>
         </div>
+`inline-code` 
+        <PreactMarkdown />
       </div>
     );
   }
