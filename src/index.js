@@ -1,13 +1,30 @@
+/**
+ *  @flow
+ *  @format
+ *  @jsx h
+ * */
 import { h, render } from 'preact';
 import { Provider, connect } from 'preact-redux';
+import Router, { Route } from 'preact-router';
+import AsyncRoute from 'preact-async-route';
+import Match from 'preact-router/match';
 import store from './store';
-import PageHome from './PageHome';
 import './style/site.scss';
 
-const App = connect(state => state)(PageHome);
-  render(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    document.body
-  );
+render(
+  <Provider store={store}>
+    <Router>
+      <AsyncRoute
+        path="/"
+        getComponent={() => import('./PageHome').then(module => module.default)}
+      />
+      <AsyncRoute
+        path="/journals"
+        getComponent={() =>
+          import('./PageJournals').then(module => module.default)
+        }
+      />
+    </Router>
+  </Provider>,
+  document.body
+);

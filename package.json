@@ -11,6 +11,7 @@
     "babel-runtime": "^6.26.0",
     "classnames": "^2.2.5",
     "preact": "^8.2.7",
+    "preact-async-route": "^2.1.1",
     "preact-redux": "^2.0.3",
     "preact-router": "^2.6.0",
     "redux": "^3.7.2",

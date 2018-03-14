@@ -1,10 +1,10 @@
 // @flow @jsx h
 import { h, Component } from 'preact';
 import UpcomingClimbs from './components/UpcomingClimbs';
-import InstagramLink from './components/InstagramLink';
-import Header from './components/Header';
 import Breadcrumb from '../widgets/Breadcrumb';
 import Docked from '../widgets/Docked';
+import Header from '../widgets/Header';
+import InstagramLink from '../widgets/InstagramLink';
 import './style.scss';
 
 const DockedHeader = Docked(Header);
@@ -17,9 +17,8 @@ const links = [
     active: true,
   },
   {
-    text: 'journal',
-    url: '/journal',
-    disabled: true,
+    text: 'journals',
+    url: '/journals',
   },
 ];
 
