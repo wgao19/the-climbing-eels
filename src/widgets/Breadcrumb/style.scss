@@ -11,14 +11,17 @@
   font-weight: 200;
   > span {
     // for better looking underline
-    padding-bottom: .2rem;
+    padding-bottom: 0.2rem;
+    color: $light-yellow;
   }
   &--active > span {
+    color: white;
     border-bottom: 1px solid $light-yellow;
   }
   &--disabled {
     color: $light-yellow;
-    cursor: no-drop;
+    //cursor: no-drop;
+    cursor: not-allowed;
   }
   &:not(:last-child) {
     &:after {
