@@ -2,9 +2,8 @@
 
 import { h, Component } from 'preact';
 
-
-export default class PageJournals extends Component {
+export default class PageStories extends Component {
   render() {
-    return <div>Hello page journals</div>
+    return <div>Hello page stories</div>;
   }
 }

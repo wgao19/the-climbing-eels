@@ -19,9 +19,9 @@ render(
         getComponent={() => import('./PageHome').then(module => module.default)}
       />
       <AsyncRoute
-        path="/journals"
+        path="/stories"
         getComponent={() =>
-          import('./PageJournals').then(module => module.default)
+          import('./PageStories').then(module => module.default)
         }
       />
     </Router>

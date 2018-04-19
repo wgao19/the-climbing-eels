@@ -17,13 +17,14 @@ const links = [
     active: true,
   },
   {
-    text: 'journals',
-    url: '/journals',
+    text: 'stories',
+    url: '/stories',
+    disabled: true,
   },
 ];
 
 export default class PageHome extends Component {
-  render(props) {
+  render() {
     return (
       <div className="page-home">
         <DockedHeader top={234} />
