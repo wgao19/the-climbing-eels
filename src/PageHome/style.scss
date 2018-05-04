@@ -13,7 +13,7 @@
     height: 30%;
   }
   &__bottom {
-    background: $dark;
+    background: $old-dark;
     &::-webkit-scrollbar {
       display: none;
     }
@@ -46,6 +46,6 @@
     text-align: right;
     line-height: 4rem;
     text-transform: uppercase;
-    color: $light;
+    color: $old-light;
   }
 }

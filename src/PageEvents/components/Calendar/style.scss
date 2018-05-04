@@ -1,0 +1,57 @@
+@import '../../../style/colors';
+
+.calendar {
+  border-radius: 7px;
+  box-shadow: $shade 2px 2px 4px 0;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  background-image: url(https://www.lionsroar.com/wp-content/uploads/2008/09/jeremy-bishop-298892-1024x683.jpg);
+  background-size: cover;
+  background-position: center;
+  filter: sepia(0.2);
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  &__content {
+    position: absolute;
+    right: 0;
+    background: rgba($light, 0.7);
+    width: 70%;
+    height: 100%;
+    right: 0;
+    color: $warm;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+.calendar-title {
+  font-weight: 300;
+  margin: 16px 0 0;
+}
+.calendar-secondary-title {
+  font-weight: 300;
+  font-size: 12px;
+  margin: 0;
+}
+
+.calendar-itself {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  margin-top: 30px;
+}
+.calendar-header {
+  display: table-row;
+  background: $warm;
+    height: 25px;
+  &__weekday {
+    font-size: 12px;
+    display: table-cell;
+    color: $light;
+    text-transform: capitalize;
+    vertical-align: middle;
+  }
+}

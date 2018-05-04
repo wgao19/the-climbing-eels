@@ -19,6 +19,10 @@ render(
         getComponent={() => import('./PageHome').then(module => module.default)}
       />
       <AsyncRoute
+        path="/events"
+        getComponent={() => import('./PageEvents').then(module => module.default)}
+      />
+      <AsyncRoute
         path="/stories"
         getComponent={() =>
           import('./PageStories').then(module => module.default)
