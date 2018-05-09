@@ -1,18 +1,16 @@
 /**
- * @flow @jsx h
+ * @flow
  * shamelessly copy from http://tobiasahlin.com/spinkit/
  * */
 
-import { h, Component } from 'preact';
+import React from 'react';
 import './style.scss';
 
-export default class Loading extends Component {
-  render() {
-    return (
-      <div className="eels-loading">
-        <div className="eels-loading-dot-1" />
-        <div className="eels-loading-dot-2" />
-      </div>
-    );
-  }
-}
+const Loading = () => (
+  <div className="eels-loading">
+    <div className="eels-loading-dot-1" />
+    <div className="eels-loading-dot-2" />
+  </div>
+);
+
+export default Loading;

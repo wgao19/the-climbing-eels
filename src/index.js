@@ -1,34 +1,24 @@
 /**
  *  @flow
  *  @format
- *  @jsx h
  * */
-import { h, render } from 'preact';
-import { Provider, connect } from 'preact-redux';
-import Router, { Route } from 'preact-router';
-import AsyncRoute from 'preact-async-route';
-import Match from 'preact-router/match';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import store from './store';
+import PageHome from './PageHome';
+import PageEvents from './PageEvents';
 import './style/site.scss';
 
-render(
+ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <AsyncRoute
-        path="/"
-        getComponent={() => import('./PageHome').then(module => module.default)}
-      />
-      <AsyncRoute
-        path="/events"
-        getComponent={() => import('./PageEvents').then(module => module.default)}
-      />
-      <AsyncRoute
-        path="/stories"
-        getComponent={() =>
-          import('./PageStories').then(module => module.default)
-        }
-      />
+      <div>
+        <Route path="/" component={PageHome} />
+        <Route path="/events" component={PageEvents} />
+      </div>
     </Router>
   </Provider>,
-  document.body
+  document.querySelector('#root')
 );

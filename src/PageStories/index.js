@@ -1,9 +1,8 @@
 // @flow
+import React from 'react';
 
-import { h, Component } from 'preact';
+const PageStories = () => {
+  return <div>Hello page stories</div>;
+};
 
-export default class PageStories extends Component {
-  render() {
-    return <div>Hello page stories</div>;
-  }
-}
+export default PageStories;

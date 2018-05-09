@@ -1,8 +1,8 @@
-// @flow @jsx h
-import { h, Component } from 'preact';
+// @flow
+import React from 'react';
 import UpcomingClimbs from './components/UpcomingClimbs';
 import Breadcrumb from '../widgets/Breadcrumb';
-import Docked from '../widgets/Docked';
+import Docked from 'react-scroll-docked';
 import Header from '../widgets/Header';
 import InstagramLink from '../widgets/InstagramLink';
 import './style.scss';
@@ -23,30 +23,29 @@ const links = [
   },
 ];
 
-export default class PageHome extends Component {
-  render() {
-    return (
-      <div className="page-home">
-        <DockedHeader top={234} />
-        <div className="page-home__top">
-          <div className="page-home-top-content">
-            <div className="page-home-top-content__header">hello eels</div>
-            <div className="page-home-top-content__text">
-              eels are a couple of avid rock climbers
-              <Breadcrumb links={links} />
-            </div>
-            <InstagramLink className="page-home-top-content__instagram-link" />
+const PageHome = () => {
+  return (
+    <div className="page-home">
+      <DockedHeader top={234} />
+      <div className="page-home__top">
+        <div className="page-home-top-content">
+          <div className="page-home-top-content__header">hello eels</div>
+          <div className="page-home-top-content__text">
+            eels are a couple of avid rock climbers
+            <Breadcrumb links={links} />
           </div>
-        </div>
-        <div className="page-home__bottom">
-          <div className="page-home-bottom-content serif">
-            <div className="page-home-bottom-content__header">
-              upcoming climbs
-            </div>
-            <UpcomingClimbs />
-          </div>
+          <InstagramLink className="page-home-top-content__instagram-link" />
         </div>
       </div>
-    );
-  }
-}
+      <div className="page-home__bottom">
+        <div className="page-home-bottom-content serif">
+          <div className="page-home-bottom-content__header">
+            upcoming climbs
+          </div>
+          <UpcomingClimbs />
+        </div>
+      </div>
+    </div>
+  );
+};
+export default PageHome;

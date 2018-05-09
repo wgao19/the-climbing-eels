@@ -1,28 +1,35 @@
 /**
- * @flow @jsx h
+ * @flow
  * Intelligent component that loads and displays upcoming climbs
  * */
-import { h, Component } from 'preact';
-import { connect } from 'preact-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import initGoogle from '../../../utils/Google';
 import ClimbEvent from '../ClimbEvent';
 import Loading from '../../../widgets/Loading';
 import { loadClimbs } from '../../../store/climbs/actions';
 import randomWait from '../../../utils/randomWait';
 
+type UpcomingClimbsProps = { upcomingClimbs: mixed[], loadClimbs: Function };
+
 class UpcomingClimbs extends Component {
+  constructor(props: UpcomingClimbsProps) {
+    super(props);
+  }
   componentDidMount() {
     randomWait(() => {
       initGoogle(this.props.loadClimbs);
     });
   }
 
-  render(props: { upcomingClimbs: mixed[], loadClimbs: Function }) {
-    const { upcomingClimbs } = props;
+  render() {
+    const { upcomingClimbs } = this.props;
     return (
       <div className="upcoming-climbs">
         {upcomingClimbs && upcomingClimbs.length ? (
-          upcomingClimbs.map(climb => <ClimbEvent climb={climb} />)
+          upcomingClimbs.map(climb => (
+            <ClimbEvent climb={climb} key={climb.id} />
+          ))
         ) : (
           <Loading />
         )}
