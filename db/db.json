@@ -1,0 +1,25 @@
+{
+  "climbs": [
+    {
+      "id": 1,
+      "gymId": 1,
+      "participants": ["wgao19@gmail.com"],
+      "date": "2018-5-31"
+    }, {
+      "id": 2,
+      "gymId": 2,
+      "participants": ["wgao19@gmail.com", "someone-else@gmail.com"],
+      "date": "2018-5-20"
+    }
+  ],
+  "gyms": [
+    {
+      "id": 1,
+      "location": "climb central"
+    },
+    {
+      "id": 2,
+      "location": "kinetics"
+    }
+  ]
+}
