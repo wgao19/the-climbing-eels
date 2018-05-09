@@ -59,7 +59,7 @@ const common = {
       },
     ],
   },
-  plugins: [new ExtractTextPlugin('bundle.css')],
+  plugins: [new ExtractTextPlugin('index.css')],
 };
 
 if (TARGET === 'dev') {
