@@ -11,17 +11,19 @@
     padding: 0 $eels-horizontal-padding;
   }
   @media (max-width: 1024px) {
-    padding: 0 .5rem;
+    padding: 0 0.5rem;
     &__main-text {
       display: none;
-  }
+    }
   }
   &__main-text {
     color: $dark;
+    text-decoration: none;
   }
   &__secondary-text {
     color: $light-yellow;
     margin-left: 1rem;
+    text-decoration: none;
   }
   &__instagram-link {
     width: 1.5rem;

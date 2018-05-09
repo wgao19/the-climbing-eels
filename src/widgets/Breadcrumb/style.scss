@@ -19,8 +19,8 @@
     border-bottom: 1px solid $light-yellow;
   }
   &--disabled {
+    pointer-events: none;
     color: $light-yellow;
-    //cursor: no-drop;
     cursor: not-allowed;
   }
   &:not(:last-child) {

@@ -11,7 +11,7 @@ const common = {
     path: path.resolve(__dirname, 'build'),
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.scss']
+    extensions: ['.js', '.jsx', '.scss'],
   },
   module: {
     rules: [
@@ -22,6 +22,17 @@ const common = {
       {
         test: /\.png$/,
         use: 'file-loader',
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'markdown-loader',
+          },
+        ],
       },
       {
         test: /\.s?css$/,
@@ -48,7 +59,7 @@ const common = {
       },
     ],
   },
-  plugins: [new ExtractTextPlugin('bundle.css')]
+  plugins: [new ExtractTextPlugin('bundle.css')],
 };
 
 if (TARGET === 'dev') {
@@ -58,6 +69,7 @@ if (TARGET === 'dev') {
       contentBase: __dirname,
       compress: true,
       port: 1234,
+      historyApiFallback: true,
     },
   });
 } else {

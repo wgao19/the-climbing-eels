@@ -1,13 +1,18 @@
 // @flow
 import React from 'react';
+import { Link } from 'react-router-dom';
 import InstagramLink from '../InstagramLink';
 import './style.scss';
 
 const Header = () => {
   return (
     <div className="eels-header">
-      <div className="eels-header__main-text">hello eels</div>
-      <span className="eels-header__secondary-text">us eels ♥ climbing</span>
+      <Link to="/" className="eels-header__main-text">
+        hello eels
+      </Link>
+      <Link to="/" className="eels-header__secondary-text">
+        us eels ♥ climbing
+      </Link>
       <InstagramLink className="eels-header__instagram-link" />
     </div>
   );

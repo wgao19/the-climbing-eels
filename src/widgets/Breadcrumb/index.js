@@ -20,7 +20,8 @@ const Breadcrumb = (props: BreadcrumbProps) => {
           key={index}
           className={cx(
             'eels-breadcrumb-link',
-            link.active && 'eels-breadcrumb-link--active',
+            (link.active || window.location.pathname === link.url) &&
+              'eels-breadcrumb-link--active',
             link.disabled && 'eels-breadcrumb-link--disabled'
           )}
           to={link.url}

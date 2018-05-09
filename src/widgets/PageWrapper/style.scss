@@ -1,0 +1,9 @@
+@import '../../style/colors.scss';
+@import '../../style/variables.scss';
+
+body {
+  background: $old-dark;
+}
+.eels-page {
+  -webkit-overflow-scrolling: touch;
+}
