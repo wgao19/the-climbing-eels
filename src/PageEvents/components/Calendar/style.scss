@@ -31,6 +31,15 @@ $table-border-color: rgba($shade, 0.4);
 .calendar-title {
   font-size: 20px;
   margin-bottom: 10px;
+  display: flex;
+  &__text {
+    flex-grow: 1;
+    text-align: center;
+  }
+  &__prev,
+  &__next {
+    cursor: pointer;
+  }
 }
 .calendar-body {
   display: table;

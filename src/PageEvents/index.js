@@ -6,6 +6,8 @@ import wrapPage from '../widgets/PageWrapper';
 import { loadClimbsByDateRange } from '../store/climbs/actions';
 import './style.scss';
 
+const now = new Date();
+
 class PageEvents extends React.Component {
   constructor(props) {
     super(props);
@@ -18,9 +20,11 @@ class PageEvents extends React.Component {
   render() {
     return (
       <div className="page-events">
-        <Calendar month={5} year={2018} className="page-events-calendar" />
-        <Calendar month={6} year={2018} className="page-events-calendar" />
-        <Calendar month={7} year={2018} className="page-events-calendar" />
+        <Calendar
+          month={now.getMonth()}
+          year={now.getFullYear()}
+          className="page-events-calendar"
+        />
       </div>
     );
   }
