@@ -27,31 +27,39 @@
   }
 }
 
+$table-border-color: rgba($shade, 0.4);
 .calendar-title {
-  font-weight: 300;
-  margin: 16px 0 0;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
-.calendar-secondary-title {
-  font-weight: 300;
-  font-size: 12px;
-  margin: 0;
-}
-
-.calendar-itself {
+.calendar-body {
   display: table;
   width: 100%;
   table-layout: fixed;
-  margin-top: 30px;
+  border: 1px solid $table-border-color;
+  border-collapse: separate;
+  empty-cells: hide;
+  border-spacing: 5px;
+  border-radius: 4px;
 }
 .calendar-header {
-  display: table-row;
-  background: $warm;
-    height: 25px;
+  display: table-header-group;
+  font-weight: bold;
   &__weekday {
-    font-size: 12px;
     display: table-cell;
-    color: $light;
-    text-transform: capitalize;
-    vertical-align: middle;
+    border: 1px solid $table-border-color;
+    padding: 5px;
+  }
+}
+.calendar-content {
+  display: table-row-group;
+  grid-column: span 7;
+  &__week {
+    display: table-row;
+  }
+  &__date {
+    display: table-cell;
+    border: 1px solid $table-border-color;
+    padding: 5px;
   }
 }

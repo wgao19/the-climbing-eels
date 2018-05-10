@@ -1,5 +1,12 @@
+@import '../style/colors';
+
 .page-events {
   width: 80%;
   margin: 0 auto;
   padding-top: 30px;
+  color: $light;
+}
+
+.page-events-calendar {
+  margin-bottom: 20px;
 }

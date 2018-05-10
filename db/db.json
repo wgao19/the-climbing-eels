@@ -4,12 +4,32 @@
       "id": 1,
       "gymId": 1,
       "participants": ["wgao19@gmail.com"],
-      "date": "2018-5-31"
-    }, {
+      "year": 2018,
+      "month": 5,
+      "date": 19
+    },
+    {
       "id": 2,
       "gymId": 2,
       "participants": ["wgao19@gmail.com", "someone-else@gmail.com"],
-      "date": "2018-5-20"
+      "year": 2018,
+      "month": 5,
+      "date": 20
+    },
+    {
+      "id": 1,
+      "gymId": 1,
+      "participants": ["wgao19@gmail.com", "someone-else-b@gmail.com"],
+      "year": 2018,
+      "month": 6,
+      "date": 20
+    },{
+      "id": 1,
+      "gymId": 1,
+      "participants": ["wgao19@gmail.com"],
+      "year": 2018,
+      "month": 6,
+      "date": 3
     }
   ],
   "gyms": [
