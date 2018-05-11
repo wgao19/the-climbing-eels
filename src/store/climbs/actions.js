@@ -12,32 +12,42 @@ import type { Dispatch } from '../../types/Redux';
 export const LOAD_CLIMBS_BY_DATE_RANGE = createRequestTypes(
   'LOAD_CLIMBS_BY_DATE_RANGE'
 );
-
 async function apiLoadClimbsByDateRange() {
   return await __get('http://localhost:3000/climbs');
+
+async function apiLoadGoogleCalendarEvents() {
+  await gapi.client.init({
+    apiKey: API_KEY,
+    clientId: CLIENT_ID,
+    discoveryDocs: DISCOVERY_DOCS,
+    scope: SCOPES,
+  });
+  return await gapi.client.calendar.events.list({
+    calendarId: CALENDAR_ID,
+    timeMin: new Date().toISOString(),
+    showDeleted: false,
+    singleEvents: true,
+    maxResults: 10,
+    orderBy: 'startTime',
+  });
 }
 
-export function loadClimbs() {
+const endpointGetClimbs = 'http://localhost:3000/climbs';
+async function apiLoadClimbsByDateRange(query) {
+  return await __get(
+    endpointGetClimbs,
+    objectToQueryString({ ...query, ...sortingQuery }),
+  );
+}
+
+export function loadClimbs(query: { year: number, month: number }) {
   return async function(dispatch: Dispatch) {
     dispatch(action(LOAD_CLIMBS.REQUESTED));
-    const response = await apiLoadClimbs();
-    const { result, status, statusText } = response;
+    const response = await apiLoadClimbsByDateRange(query);
     dispatch(
-      status === STATUS.SUCCESS
-        ? action(LOAD_CLIMBS.SUCCESS, { payload: result })
-        : action(LOAD_CLIMBS.FAILED, { error: statusText })
-    );
-  };
-}
-
-export function loadClimbsByDateRange() {
-  return async function(dispatch: Dispatch) {
-    dispatch(action(LOAD_CLIMBS_BY_DATE_RANGE.REQUESTED));
-    const response = await apiLoadClimbsByDateRange();
-    dispatch(
-      action(LOAD_CLIMBS_BY_DATE_RANGE.SUCCESS, {
-        payload: JSON.parse(response),
-      })
+      action(LOAD_CLIMBS.SUCCESS, {
+        payload: { climbs: JSON.parse(response) },
+      }),
     );
   };
 }

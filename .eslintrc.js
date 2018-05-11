@@ -22,4 +22,7 @@ module.exports = {
   globals: {
     gapi: 'true',
   },
+  settings: {
+    'import/resolver': 'webpack',
+  },
 };

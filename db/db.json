@@ -5,20 +5,40 @@
       "gymId": 1,
       "participant": {
         "email": "wgao19@gmail.com",
-        "avatar":
-          "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
+        "avatar": "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
       },
       "year": 2018,
       "month": 5,
       "date": 19
     },
     {
+      "id": 1,
+      "gymId": 3,
+      "participant": {
+        "email": "wgao19@gmail.com",
+        "avatar": "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
+      },
+      "year": 2018,
+      "month": 5,
+      "date": 20
+    },
+    {
+      "id": 1,
+      "gymId": 3,
+      "participant": {
+        "email": "wgao19@gmail.com",
+        "avatar": "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
+      },
+      "year": 2018,
+      "month": 5,
+      "date": 18
+    },
+    {
       "id": 2,
       "gymId": 2,
       "participant": {
         "email": "wgao19@gmail.com",
-        "avatar":
-          "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
+        "avatar": "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
       },
       "year": 2018,
       "month": 5,
@@ -29,8 +49,7 @@
       "gymId": 1,
       "participant": {
         "email": "wgao19@gmail.com",
-        "avatar":
-          "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
+        "avatar": "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
       },
       "year": 2018,
       "month": 6,
@@ -41,8 +60,7 @@
       "gymId": 1,
       "participant": {
         "email": "wgao19@gmail.com",
-        "avatar":
-          "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
+        "avatar": "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
       },
       "year": 2018,
       "month": 6,
@@ -52,11 +70,15 @@
   "gyms": [
     {
       "id": 1,
-      "location": "climb central"
+      "name": "climb central"
     },
     {
       "id": 2,
-      "location": "kinetics"
+      "name": "kinetics"
+    },
+    {
+      "id": 3,
+      "name": "onsight"
     }
   ]
 }

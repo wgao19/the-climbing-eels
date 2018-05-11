@@ -3,25 +3,28 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Calendar from './components/Calendar';
 import wrapPage from '../widgets/PageWrapper';
-import { loadClimbsByDateRange } from '../store/climbs/actions';
+import { loadGyms } from '../store/gyms/actions';
 import './style.scss';
 
 const now = new Date();
 
-class PageEvents extends React.Component {
+type PageEventsProps = {
+  loadGyms: mixed => void,
+};
+class PageEvents extends React.Component<PageEventsProps> {
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
-    this.props.loadClimbsByDateRange();
+    this.props.loadGyms();
   }
 
   render() {
     return (
       <div className="page-events">
         <Calendar
-          month={now.getMonth()}
+          month={now.getMonth() + 1}
           year={now.getFullYear()}
           className="page-events-calendar"
         />
@@ -30,4 +33,4 @@ class PageEvents extends React.Component {
   }
 }
 
-export default connect(null, { loadClimbsByDateRange })(wrapPage(PageEvents));
+export default connect(null, { loadGyms })(wrapPage(PageEvents));

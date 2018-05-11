@@ -1,19 +1,22 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import cx from 'classnames';
-import { beautifulDateTime, daysInMonth } from '../../../utils/dateTime';
+import { beautifulDateTime, daysInMonth } from 'utils/dateTime';
+import { loadClimbs } from 'store/climbs/actions';
+import type { DomType } from 'types/DomTypes';
 import { weekdays } from './constants';
-import CalendarDay from './components/CalendarDay';
-import type { DomType } from '../../../types/DomTypes';
+import CalendarDay from '../CalendarDay';
 import './style.scss';
 
 type CalendarProps = {
   month: number,
   year: number,
+  loadClimbsByDateRange: (query: Object) => void,
 } & DomType;
 
-class Calendar extends React.Component {
-  constructor(props: CalendarProps) {
+class Calendar extends React.Component<CalendarProps> {
+  constructor(props) {
     super(props);
     this.state = {
       month: props.month,
@@ -23,11 +26,16 @@ class Calendar extends React.Component {
     this.prev = this.prev.bind(this);
   }
 
+  componentDidMount() {
+    const { year, month } = this.state;
+    this.props.loadClimbs({ year, month });
+  }
+
   prev() {
     this.setState(prevState => {
-      return prevState.month <= 0
+      return prevState.month <= 1
         ? {
-            month: 11,
+            month: 12,
             year: prevState.year - 1,
           }
         : {
@@ -38,9 +46,9 @@ class Calendar extends React.Component {
 
   next() {
     this.setState(prevState => {
-      return prevState.month >= 11
+      return prevState.month >= 12
         ? {
-            month: 0,
+            month: 1,
             year: prevState.year + 1,
           }
         : {
@@ -51,7 +59,7 @@ class Calendar extends React.Component {
 
   render() {
     const { year, month } = this.state;
-    const startOfMonth = new Date(`${year}-${month + 1}`);
+    const startOfMonth = new Date(`${year}-${month}`);
     const startingWeekday = startOfMonth.getDay();
     const numberOfDaysThisMonth = daysInMonth(year, month);
     const datesArray = [];
@@ -89,40 +97,38 @@ class Calendar extends React.Component {
         </div>
         <div className="calendar-body">
           <div className="calendar-header">
-            {weekdays.map(weekday => (
+            {weekdays.map(weekday =>
               <div
                 className="calendar-header__weekday"
                 key={`header-weekday-${weekday}`}
               >
                 {weekday}
-              </div>
-            ))}
+              </div>,
+            )}
           </div>
           <div className="calendar-content">
-            {datesByWeek.map(week => (
+            {datesByWeek.map(week =>
               <div
                 className="calendar-content__week"
                 key={`content-week-${week}`}
               >
                 {week.map(
                   (date, index) =>
-                    date ? (
-                      <CalendarDay
-                        key={`content-date-${date}`}
-                        date={date}
-                        month={month}
-                        year={year}
-                        className="calendar-content__date"
-                      />
-                    ) : (
-                      <div
-                        className="calendar-content__date calendar-content__date--empty"
-                        key={`content-date-empty-${index}`}
-                      />
-                    )
+                    date
+                      ? <CalendarDay
+                          key={`content-date-${date}`}
+                          date={date}
+                          month={month}
+                          year={year}
+                          className="calendar-content__date"
+                        />
+                      : <div
+                          className="calendar-content__date calendar-content__date--empty"
+                          key={`content-date-empty-${index}`}
+                        />,
                 )}
-              </div>
-            ))}
+              </div>,
+            )}
           </div>
         </div>
       </div>
@@ -130,4 +136,4 @@ class Calendar extends React.Component {
   }
 }
 
-export default Calendar;
+export default connect(null, { loadClimbs })(Calendar);

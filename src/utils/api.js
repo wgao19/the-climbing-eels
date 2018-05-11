@@ -24,7 +24,7 @@ const xhrRequest = (type: string, url: string, data: mixed) =>
   });
 
 export const __get = (url: string, query: string = '') =>
-  xhrRequest('get', `${url}${query}`);
+  query ? xhrRequest('get', `${url}?${query}`) : xhrRequest('get', `${url}`);
 export const __put = (url: string, query: string = '', data: Object | string) =>
   xhrRequest('put', `${url}${query}`, data);
 export const __delete = (

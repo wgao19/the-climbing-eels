@@ -2,6 +2,11 @@
   position: relative;
   width: 100px;
   height: 100px;
+  &__participant-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+  }
   &__add {
     display: none;
     position: absolute;
