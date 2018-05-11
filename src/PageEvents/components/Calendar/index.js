@@ -3,6 +3,7 @@ import React from 'react';
 import cx from 'classnames';
 import { beautifulDateTime, daysInMonth } from '../../../utils/dateTime';
 import { weekdays } from './constants';
+import CalendarDay from './components/CalendarDay';
 import type { DomType } from '../../../types/DomTypes';
 import './style.scss';
 
@@ -106,12 +107,13 @@ class Calendar extends React.Component {
                 {week.map(
                   (date, index) =>
                     date ? (
-                      <div
-                        className="calendar-content__date"
+                      <CalendarDay
                         key={`content-date-${date}`}
-                      >
-                        {date}
-                      </div>
+                        date={date}
+                        month={month}
+                        year={year}
+                        className="calendar-content__date"
+                      />
                     ) : (
                       <div
                         className="calendar-content__date calendar-content__date--empty"

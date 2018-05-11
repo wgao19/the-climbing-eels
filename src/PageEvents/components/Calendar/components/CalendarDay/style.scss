@@ -1,0 +1,21 @@
+.calendar-day {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  &__add {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 24px;
+  }
+  &:hover > .calendar-day__add {
+    display: block;
+  }
+}

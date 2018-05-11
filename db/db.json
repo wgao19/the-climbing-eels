@@ -3,7 +3,11 @@
     {
       "id": 1,
       "gymId": 1,
-      "participants": ["wgao19@gmail.com"],
+      "participant": {
+        "email": "wgao19@gmail.com",
+        "avatar":
+          "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
+      },
       "year": 2018,
       "month": 5,
       "date": 19
@@ -11,22 +15,35 @@
     {
       "id": 2,
       "gymId": 2,
-      "participants": ["wgao19@gmail.com", "someone-else@gmail.com"],
+      "participant": {
+        "email": "wgao19@gmail.com",
+        "avatar":
+          "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
+      },
       "year": 2018,
       "month": 5,
       "date": 20
     },
     {
-      "id": 1,
+      "id": 3,
       "gymId": 1,
-      "participants": ["wgao19@gmail.com", "someone-else-b@gmail.com"],
+      "participant": {
+        "email": "wgao19@gmail.com",
+        "avatar":
+          "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
+      },
       "year": 2018,
       "month": 6,
       "date": 20
-    },{
-      "id": 1,
+    },
+    {
+      "id": 4,
       "gymId": 1,
-      "participants": ["wgao19@gmail.com"],
+      "participant": {
+        "email": "wgao19@gmail.com",
+        "avatar":
+          "https://2.gravatar.com/avatar/8e847791972270f6656759d84de3e4b0"
+      },
       "year": 2018,
       "month": 6,
       "date": 3
