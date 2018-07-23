@@ -1,1 +1,1 @@
-sudo cp build/* /var/www/html
+sudo cp build/* /var/www/eels
