@@ -7,26 +7,26 @@
 .eels-breadcrumb-link {
   display: inline-block;
   text-decoration: none;
-  color: white;
+  color: $primary;
   font-weight: 200;
   > span {
     // for better looking underline
     padding-bottom: 0.2rem;
-    color: $light-yellow;
+    color: $primary;
   }
   &--active > span {
-    color: white;
-    border-bottom: 1px solid $light-yellow;
+    color: $primary;
+    border-bottom: 1px solid $primary;
   }
   &--disabled {
     pointer-events: none;
-    color: $light-yellow;
+    color: rgba($primary, .4);
     cursor: not-allowed;
   }
   &:not(:last-child) {
     &:after {
       content: '/';
-      color: $light-yellow;
+      color: $primary;
       margin: 0.4rem;
     }
   }

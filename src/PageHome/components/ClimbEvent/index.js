@@ -2,6 +2,7 @@
  * @flow
  * */
 import React from 'react';
+import cx from 'classnames';
 import beautifulDateTime from '../../../utils/beautifulDateTime';
 import type { ClimbType } from '../../../types/ClimbTypes';
 import './style.scss';
@@ -12,6 +13,7 @@ type ClimbEventProps = {
 
 const ClimbEvent = (props: ClimbEventProps) => {
   const { summary, start, end, location, type, notes } = props.climb;
+  const types = type.split(' + ');
   const displayStartTime = start.dateTime
     ? beautifulDateTime(new Date(start.dateTime))
     : start.date;
@@ -22,7 +24,15 @@ const ClimbEvent = (props: ClimbEventProps) => {
     <div className="climb-event">
       <div className="climb-event__header">
         {summary}
-        {type && <div className="climb-event__flag">{type}</div>}
+        {types &&
+          types.map((item, index) => (
+            <div
+              className={cx('climb-event__flag', `climb-event__flag--${item}`)}
+              key={`type-${index}`}
+            >
+              {item}
+            </div>
+          ))}
       </div>
       <div className="climb-event__time">
         {displayStartTime} - {displayEndTime}
