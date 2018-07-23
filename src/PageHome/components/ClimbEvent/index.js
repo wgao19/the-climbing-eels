@@ -46,7 +46,6 @@ const ClimbEvent = (props: ClimbEventProps) => {
               className={cx(
                 'climb-event__time',
                 mood && `climb-event__time--${mood}`,
-                'serif',
               )}
             >
               {displayStartTime} - {displayEndTime}
@@ -56,7 +55,6 @@ const ClimbEvent = (props: ClimbEventProps) => {
                 className={cx(
                   'climb-event__location',
                   mood && `climb-event__location--${mood}`,
-                  'serif',
                 )}
               >
                 <a
@@ -67,7 +65,12 @@ const ClimbEvent = (props: ClimbEventProps) => {
                 </a>
               </div>}
             {notes &&
-              <div className="climb-event__notes">
+              <div
+                className={cx(
+                  'climb-event__notes serif',
+                  mood && `climb-event__notes--${mood}`,
+                )}
+              >
                 {notes}
               </div>}
           </React.Fragment>}

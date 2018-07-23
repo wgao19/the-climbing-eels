@@ -7,3 +7,18 @@
 @mixin box-shadow($color) {
   box-shadow: 5px 10px 5px 10px $color;
 }
+
+@mixin with-mood() {
+  &--calm {
+    color: $calm;
+  }
+  &--warm {
+    color: $warm;
+  }
+  &--chill {
+    color: $chill;
+  }
+  &--active {
+    color: $active;
+  }
+}

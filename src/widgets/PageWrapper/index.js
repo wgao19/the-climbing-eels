@@ -3,6 +3,7 @@
  * @format
  * */
 import React, { Component } from 'react';
+import cx from 'classnames';
 import Docked from 'react-scroll-docked';
 import Header from '../Header';
 import Breadcrumb from '../Breadcrumb';
@@ -46,10 +47,19 @@ const PageWrapper = WrappedPage => {
             <div className="page-home__top">
               <div className="page-home-top-content">
                 <div className="page-home-top-content__header">hello eels</div>
-                <div className="page-home-top-content__text">
-                  constantly a work in progress
-                  <Breadcrumb links={links} />
-                </div>
+                <MoodContext.Consumer>
+                  {({ mood }) =>
+                    <div
+                      className={cx(
+                        'page-home-top-content__text',
+                        mood && `page-home-top-content__text--${mood}`,
+                        'serif'
+                      )}
+                    >
+                      constantly a work in progress
+                    </div>}
+                </MoodContext.Consumer>
+                <Breadcrumb links={links} />
                 <InstagramLink className="page-home-top-content__instagram-link" />
               </div>
             </div>

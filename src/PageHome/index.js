@@ -9,9 +9,6 @@ const PageHome = () => {
     <div className="page-home">
       <div className="page-home__bottom">
         <div className="page-home-bottom-content">
-          <div className="page-home-bottom-content__header">
-            upcoming climbs
-          </div>
           <UpcomingClimbs />
         </div>
       </div>

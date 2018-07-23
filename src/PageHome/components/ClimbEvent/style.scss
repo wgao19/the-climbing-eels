@@ -1,4 +1,5 @@
 @import '../../../style/colors';
+@import 'mixins';
 .climb-event {
   text-align: left;
   margin: 1.5rem 0;
@@ -53,24 +54,10 @@
     }
     padding: 0.5rem 1rem;
     line-height: 1.4;
-    border-left: 0.5rem solid $primary;
-    border-right: 0.5rem solid $primary;
-    &--calm {
-      border-color: $calm;
-      color: $calm;
-    }
-    &--warm {
-      border-color: $warm;
-      color: $warm;
-    }
-    &--chill {
-      border-color: $chill;
-      color: $chill;
-    }
-    &--active {
-      border-color: $active;
-      color: $active;
-    }
+    border-left: 0.5rem solid;
+    border-right: 0.5rem solid;
+    @include with-mood;
+    border-color: currentColor;
   }
   &__notes {
     line-height: 1.4rem;
@@ -80,5 +67,6 @@
     text-transform: none;
     color: $primary;
     padding: 1rem;
+    @include with-mood;
   }
 }
