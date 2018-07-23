@@ -45,8 +45,12 @@
   }
   &__time,
   &__location {
-    font-size: 0.8rem;
     color: rgba($primary, 0.5);
+    > a {
+      font-size: 0.8rem;
+      color: currentColor;
+      text-decoration: none;
+    }
     padding: 0.5rem 1rem;
     line-height: 1.4;
     border-left: 0.5rem solid $primary;

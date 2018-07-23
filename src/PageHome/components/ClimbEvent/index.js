@@ -59,7 +59,12 @@ const ClimbEvent = (props: ClimbEventProps) => {
                   'serif',
                 )}
               >
-                {location}
+                <a
+                  target="_blank"
+                  href={`https://www.google.com/maps/search/${location}`}
+                >
+                  📍{location}
+                </a>
               </div>}
             {notes &&
               <div className="climb-event__notes">
