@@ -7,6 +7,7 @@ import Docked from 'react-scroll-docked';
 import Header from '../Header';
 import Breadcrumb from '../Breadcrumb';
 import InstagramLink from '../InstagramLink';
+import MoodContext from '../Mood';
 import './style.scss';
 
 const DockedHeader = Docked(Header);
@@ -23,24 +24,38 @@ const links = [
   },
 ];
 
+const moods = [
+  'active',
+  'calm',
+  'calm',
+  'calm',
+  'chill',
+  'chill',
+  'chill',
+  'warm',
+];
+const mood = moods[Math.floor(Math.random() * moods.length)];
+
 const PageWrapper = WrappedPage => {
   return class PageWithWrapper extends Component {
     render() {
       return (
-        <div className="eels-page">
-          <DockedHeader top={234} />
-          <div className="page-home__top">
-            <div className="page-home-top-content">
-              <div className="page-home-top-content__header">hello eels</div>
-              <div className="page-home-top-content__text">
-                constantly a work in progress
-                <Breadcrumb links={links} />
+        <MoodContext.Provider value={{ mood }}>
+          <div className="eels-page">
+            <DockedHeader top={234} />
+            <div className="page-home__top">
+              <div className="page-home-top-content">
+                <div className="page-home-top-content__header">hello eels</div>
+                <div className="page-home-top-content__text">
+                  constantly a work in progress
+                  <Breadcrumb links={links} />
+                </div>
+                <InstagramLink className="page-home-top-content__instagram-link" />
               </div>
-              <InstagramLink className="page-home-top-content__instagram-link" />
             </div>
+            <WrappedPage {...this.props} />
           </div>
-          <WrappedPage {...this.props} />
-        </div>
+        </MoodContext.Provider>
       );
     }
   };

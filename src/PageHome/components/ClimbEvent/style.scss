@@ -26,17 +26,21 @@
     border-radius: 0.5rem 0.1rem 0.5rem 0.1rem;
     height: 1.4rem;
     line-height: 1.4rem;
-    &--bouldering {
+    &--calm {
       background: $calm;
+      box-shadow: rgba($calm, .4) 0 1px 5px 0;
     }
-    &--social {
+    &--warm {
       background: $warm;
+      box-shadow: rgba($warm, .4) 0 1px 5px 0;
     }
-    &--indoor {
+    &--chill {
       background: $chill;
+      box-shadow: rgba($chill, .4) 0 1px 5px 0;
     }
-    &--lead {
-      background: $yellow;
+    &--active {
+      background: $active;
+      box-shadow: rgba($active, .4) 0 1px 5px 0;
     }
   }
   &__time,
@@ -47,6 +51,22 @@
     line-height: 1.4;
     border-left: 0.5rem solid $primary;
     border-right: 0.5rem solid $primary;
+    &--calm {
+      border-color: $calm;
+      color: $calm;
+    }
+    &--warm {
+      border-color: $warm;
+      color: $warm;
+    }
+    &--chill {
+      border-color: $chill;
+      color: $chill;
+    }
+    &--active {
+      border-color: $active;
+      color: $active;
+    }
   }
   &__notes {
     line-height: 1.4rem;

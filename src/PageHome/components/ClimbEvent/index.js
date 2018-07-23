@@ -1,8 +1,9 @@
 /**
  * @flow
  * */
-import React from 'react';
+import * as React from 'react';
 import cx from 'classnames';
+import Mood from '../../../widgets/Mood';
 import beautifulDateTime from '../../../utils/beautifulDateTime';
 import type { ClimbType } from '../../../types/ClimbTypes';
 import './style.scss';
@@ -22,23 +23,50 @@ const ClimbEvent = (props: ClimbEventProps) => {
     : end.date;
   return (
     <div className="climb-event">
-      <div className="climb-event__header">
-        {summary}
-        {types &&
-          types.map((item, index) => (
-            <div
-              className={cx('serif', 'climb-event__flag', `climb-event__flag--${item}`)}
-              key={`type-${index}`}
-            >
-              {item}
+      <Mood.Consumer>
+        {({ mood }) =>
+          <React.Fragment>
+            <div className="climb-event__header">
+              {summary}
+              {types &&
+                types.map((item, index) =>
+                  <div
+                    className={cx(
+                      'serif',
+                      'climb-event__flag',
+                      `climb-event__flag--${mood}`,
+                    )}
+                    key={`type-${index}`}
+                  >
+                    {item}
+                  </div>,
+                )}
             </div>
-          ))}
-      </div>
-      <div className="climb-event__time serif">
-        {displayStartTime} - {displayEndTime}
-      </div>
-      {location && <div className="climb-event__location serif">{location}</div>}
-      {notes && <div className="climb-event__notes">{notes}</div>}
+            <div
+              className={cx(
+                'climb-event__time',
+                mood && `climb-event__time--${mood}`,
+                'serif',
+              )}
+            >
+              {displayStartTime} - {displayEndTime}
+            </div>
+            {location &&
+              <div
+                className={cx(
+                  'climb-event__location',
+                  mood && `climb-event__location--${mood}`,
+                  'serif',
+                )}
+              >
+                {location}
+              </div>}
+            {notes &&
+              <div className="climb-event__notes">
+                {notes}
+              </div>}
+          </React.Fragment>}
+      </Mood.Consumer>
     </div>
   );
 };
