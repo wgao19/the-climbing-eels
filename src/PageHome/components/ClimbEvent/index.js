@@ -27,17 +27,17 @@ const ClimbEvent = (props: ClimbEventProps) => {
         {types &&
           types.map((item, index) => (
             <div
-              className={cx('climb-event__flag', `climb-event__flag--${item}`)}
+              className={cx('serif', 'climb-event__flag', `climb-event__flag--${item}`)}
               key={`type-${index}`}
             >
               {item}
             </div>
           ))}
       </div>
-      <div className="climb-event__time">
+      <div className="climb-event__time serif">
         {displayStartTime} - {displayEndTime}
       </div>
-      {location && <div className="climb-event__location">{location}</div>}
+      {location && <div className="climb-event__location serif">{location}</div>}
       {notes && <div className="climb-event__notes">{notes}</div>}
     </div>
   );

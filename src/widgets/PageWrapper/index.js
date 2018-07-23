@@ -20,7 +20,6 @@ const links = [
   {
     text: 'stories',
     url: '/stories',
-    disabled: true,
   },
 ];
 

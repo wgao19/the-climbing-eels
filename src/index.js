@@ -10,6 +10,7 @@ import store from './store';
 import PageHome from './PageHome';
 import PageEvents from './PageEvents';
 import PageSafetyInfo from './PageSafetyInfo';
+import PageStories from './PageStories';
 import './style/site.scss';
 
 ReactDOM.render(
@@ -19,6 +20,7 @@ ReactDOM.render(
         <Route exact path="/" component={PageHome} />
         <Route exact path="/safety-info" component={PageSafetyInfo} />
         <Route exact path="/events" component={PageEvents} />
+        <Route exact path="/stories" component={PageStories} />
       </div>
     </Router>
   </Provider>,
