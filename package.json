@@ -23,16 +23,16 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-loader": "^7.1.4",
-    "babel-preset-flow": "^6.23.0",
-    "babel-runtime": "^6.26.0",
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
+    "babel-runtime": "^6.26.0",
     "css-loader": "^0.28.11",
     "eslint": "^4.18.1",
     "eslint-config-airbnb-base": "^12.1.0",
@@ -40,7 +40,7 @@
     "eslint-plugin-flowtype": "^2.46.1",
     "eslint-plugin-import": "^2.9.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "flow-bin": "^0.66.0",
+    "flow-bin": "^0.77.0",
     "html-loader": "^0.5.5",
     "markdown-loader": "^2.0.2",
     "node-sass": "^4.7.2",
@@ -58,8 +58,7 @@
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
-    "deploy":
-      "git pull --rebase && npm install && npm run build && sh scripts/deploy.sh",
+    "deploy": "git pull --rebase && npm install && npm run build && sh scripts/deploy.sh",
     "dev": "webpack-dev-server"
   }
 }
