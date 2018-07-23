@@ -22,10 +22,6 @@ const links = [
     url: '/stories',
     disabled: true,
   },
-  {
-    text: 'safety',
-    url: '/safety-info',
-  },
 ];
 
 const PageWrapper = WrappedPage => {
@@ -38,7 +34,7 @@ const PageWrapper = WrappedPage => {
             <div className="page-home-top-content">
               <div className="page-home-top-content__header">hello eels</div>
               <div className="page-home-top-content__text">
-                eels are a group of avid rock climbers
+                constantly a work in progress
                 <Breadcrumb links={links} />
               </div>
               <InstagramLink className="page-home-top-content__instagram-link" />

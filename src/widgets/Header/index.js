@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div className="eels-header">
       <Link to="/" className="eels-header__main-text">
-        hello eels
+        ٩(๑❛ᴗ❛๑)۶
       </Link>
       <Link to="/" className="eels-header__secondary-text">
         us eels ♥ climbing
