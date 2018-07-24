@@ -14,7 +14,7 @@ type ClimbEventProps = {
 
 const ClimbEvent = (props: ClimbEventProps) => {
   const { summary, start, end, location, type, notes } = props.climb;
-  const types = type.split(' + ');
+  const types = type && type.split(' + ');
   const displayStartTime = start.dateTime
     ? beautifulDateTime(new Date(start.dateTime))
     : start.date;
@@ -24,37 +24,37 @@ const ClimbEvent = (props: ClimbEventProps) => {
   return (
     <div className="climb-event">
       <Mood.Consumer>
-        {({ mood }) =>
+        {({ mood }) => (
           <React.Fragment>
             <div className="climb-event__header">
               {summary}
               {types &&
-                types.map((item, index) =>
+                types.map((item, index) => (
                   <div
                     className={cx(
                       'serif',
                       'climb-event__flag',
-                      `climb-event__flag--${mood}`,
+                      `climb-event__flag--${mood}`
                     )}
                     key={`type-${index}`}
                   >
                     {item}
-                  </div>,
-                )}
+                  </div>
+                ))}
             </div>
             <div
               className={cx(
                 'climb-event__time',
-                mood && `climb-event__time--${mood}`,
+                mood && `climb-event__time--${mood}`
               )}
             >
               {displayStartTime} - {displayEndTime}
             </div>
-            {location &&
+            {location && (
               <div
                 className={cx(
                   'climb-event__location',
-                  mood && `climb-event__location--${mood}`,
+                  mood && `climb-event__location--${mood}`
                 )}
               >
                 <a
@@ -63,17 +63,20 @@ const ClimbEvent = (props: ClimbEventProps) => {
                 >
                   📍{location}
                 </a>
-              </div>}
-            {notes &&
+              </div>
+            )}
+            {notes && (
               <div
                 className={cx(
                   'climb-event__notes serif',
-                  mood && `climb-event__notes--${mood}`,
+                  mood && `climb-event__notes--${mood}`
                 )}
               >
                 {notes}
-              </div>}
-          </React.Fragment>}
+              </div>
+            )}
+          </React.Fragment>
+        )}
       </Mood.Consumer>
     </div>
   );

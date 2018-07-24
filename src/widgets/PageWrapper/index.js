@@ -2,8 +2,9 @@
  * @flow
  * @format
  * */
-import React, { Component } from 'react';
+import * as React from 'react';
 import cx from 'classnames';
+// $FlowFixMe
 import Docked from 'react-scroll-docked';
 import Header from '../Header';
 import Breadcrumb from '../Breadcrumb';
@@ -37,18 +38,19 @@ const moods = [
 ];
 const mood = moods[Math.floor(Math.random() * moods.length)];
 
-const PageWrapper = WrappedPage => {
-  return class PageWithWrapper extends Component {
+const PageWrapper = (WrappedPage: React.ComponentType<*>) => {
+  return class PageWithWrapper extends React.Component<*> {
     render() {
       return (
         <MoodContext.Provider value={{ mood }}>
           <div className="eels-page">
             <DockedHeader top={234} />
+            {/* TODO: refactor */}
             <div className="page-home__top">
               <div className="page-home-top-content">
                 <div className="page-home-top-content__header">hello eels</div>
                 <MoodContext.Consumer>
-                  {({ mood }) =>
+                  {({ mood }) => (
                     <div
                       className={cx(
                         'page-home-top-content__text',
@@ -57,7 +59,8 @@ const PageWrapper = WrappedPage => {
                       )}
                     >
                       constantly a work in progress
-                    </div>}
+                    </div>
+                  )}
                 </MoodContext.Consumer>
                 <Breadcrumb links={links} />
                 <InstagramLink className="page-home-top-content__instagram-link" />

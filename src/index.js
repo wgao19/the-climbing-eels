@@ -24,5 +24,6 @@ ReactDOM.render(
       </div>
     </Router>
   </Provider>,
+  // $FlowIgnoreNextLine
   document.querySelector('#root')
 );

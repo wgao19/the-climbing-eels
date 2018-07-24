@@ -12,6 +12,7 @@ const common = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss'],
+    modules: [path.join(__dirname, 'src'), 'node_modules'],
   },
   module: {
     rules: [
