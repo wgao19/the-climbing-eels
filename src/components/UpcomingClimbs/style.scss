@@ -11,12 +11,14 @@
 }
 
 .climb-event {
+  @include with-mood;
   text-align: left;
   margin: 1.5rem 0;
   border-radius: 1rem;
   background: $light;
   overflow: hidden;
   box-shadow: $primary 0 1px 7px 0;
+  border-bottom: 4px solid currentColor;
 
   &__header {
     color: $dark;
@@ -29,7 +31,7 @@
   &__flag {
     text-transform: lowercase;
     white-space: nowrap;
-    background: $primary;
+    background: currentColor;
     color: $light;
     margin-left: 1rem;
     font-size: 0.7rem;
@@ -37,20 +39,20 @@
     border-radius: 0.5rem 0.1rem 0.5rem 0.1rem;
     height: 1.4rem;
     line-height: 1.4rem;
+    @include with-mood;
+    > span {
+      color: $light;
+    }
     &--calm {
-      background: $calm;
       box-shadow: rgba($calm, 0.4) 0 1px 5px 0;
     }
     &--warm {
-      background: $warm;
       box-shadow: rgba($warm, 0.4) 0 1px 5px 0;
     }
     &--chill {
-      background: $chill;
       box-shadow: rgba($chill, 0.4) 0 1px 5px 0;
     }
     &--active {
-      background: $active;
       box-shadow: rgba($active, 0.4) 0 1px 5px 0;
     }
   }
@@ -69,13 +71,18 @@
     @include with-mood;
     border-color: currentColor;
   }
+  &__attendees {
+    padding: 0 1rem;
+    margin: 1rem 0 0;
+    display: flex;
+  }
   &__notes {
     line-height: 1.4rem;
     font-size: 1rem;
     font-weight: 300;
-    margin-top: 1rem;
+    margin: 1rem 0;
+    padding: 0 1rem;
     text-transform: none;
     color: $primary;
-    padding: 1rem;
   }
 }

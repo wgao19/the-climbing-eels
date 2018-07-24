@@ -3,6 +3,7 @@
  * */
 import * as React from 'react';
 import cx from 'classnames';
+import Avatar from 'widgets/Avatar';
 import Mood from 'widgets/Mood';
 import beautifulDateTime from 'utils/beautifulDateTime';
 import type { ClimbType } from 'types/ClimbTypes';
@@ -13,7 +14,7 @@ type ClimbEventProps = {
 };
 
 const ClimbEvent = (props: ClimbEventProps) => {
-  const { summary, start, end, location, type, notes } = props.climb;
+  const { summary, start, end, location, type, notes, attendees } = props.climb;
   const types = type && type.split(' + ');
   const displayStartTime = start.dateTime
     ? beautifulDateTime(new Date(start.dateTime))
@@ -22,9 +23,9 @@ const ClimbEvent = (props: ClimbEventProps) => {
     ? beautifulDateTime(new Date(end.dateTime))
     : end.date;
   return (
-    <div className="climb-event">
-      <Mood.Consumer>
-        {({ mood }) => (
+    <Mood.Consumer>
+      {({ mood }) => (
+        <div className={cx('climb-event', mood && `climb-event__${mood}`)}>
           <React.Fragment>
             <div className="climb-event__header">
               {summary}
@@ -38,7 +39,7 @@ const ClimbEvent = (props: ClimbEventProps) => {
                     )}
                     key={`type-${index}`}
                   >
-                    {item}
+                    <span>{item}</span>
                   </div>
                 ))}
             </div>
@@ -65,6 +66,14 @@ const ClimbEvent = (props: ClimbEventProps) => {
                 </a>
               </div>
             )}
+            {attendees &&
+              attendees.length && (
+                <div className="climb-event__attendees">
+                  {attendees.map(attendee => (
+                    <Avatar key={`avatar-${attendee.email}`} {...attendee} />
+                  ))}
+                </div>
+              )}
             {notes && (
               <div
                 className={cx(
@@ -76,9 +85,9 @@ const ClimbEvent = (props: ClimbEventProps) => {
               </div>
             )}
           </React.Fragment>
-        )}
-      </Mood.Consumer>
-    </div>
+        </div>
+      )}
+    </Mood.Consumer>
   );
 };
 

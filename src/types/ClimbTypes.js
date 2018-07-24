@@ -1,8 +1,15 @@
 // @flow
 
-import type { GoogleDate, GoogleUser} from './GoogleTypes';
+import type { GoogleDate, GoogleUser } from './GoogleTypes';
 
-export type ClimbType = {
+export type ClimberType = {|
+  displayName: string,
+  email: string,
+  responseStatus: string,
+|};
+
+export type ClimbType = {|
+  attendees?: ClimberType[],
   created: string,
   creator: GoogleUser,
   end: GoogleDate,
@@ -24,4 +31,4 @@ export type ClimbType = {
   // modified by reducer
   type?: string,
   notes?: string,
-};
+|};

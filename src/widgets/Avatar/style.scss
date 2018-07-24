@@ -1,0 +1,13 @@
+@import 'colors';
+.eels-avatar {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 7rem;
+  overflow: hidden;
+  &:not(:last-child) {
+    margin-right: .5rem;
+  }
+  > img {
+    width: 100%;
+  }
+}
