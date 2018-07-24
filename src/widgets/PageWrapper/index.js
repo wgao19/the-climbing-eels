@@ -3,7 +3,11 @@
  * @format
  * */
 import * as React from 'react';
+import { connect } from 'react-redux';
 import cx from 'classnames';
+
+import searchStringToQueryObject from 'utils/searchStringToQueryObject';
+
 // $FlowFixMe
 import Docked from 'react-scroll-docked';
 import Header from '../Header';
@@ -36,11 +40,12 @@ const moods = [
   'chill',
   'warm',
 ];
-const mood = moods[Math.floor(Math.random() * moods.length)];
 
 const PageWrapper = (WrappedPage: React.ComponentType<*>) => {
-  return class PageWithWrapper extends React.Component<*> {
+  class PageWithWrapper extends React.Component<*> {
     render() {
+      const mood =
+        this.props.mood || moods[Math.floor(Math.random() * moods.length)];
       return (
         <MoodContext.Provider value={{ mood }}>
           <div className="eels-page">
@@ -71,7 +76,14 @@ const PageWrapper = (WrappedPage: React.ComponentType<*>) => {
         </MoodContext.Provider>
       );
     }
-  };
+  }
+
+  return connect((state, ownProps) => {
+    const { mood } = searchStringToQueryObject(ownProps.location.search);
+    return {
+      mood,
+    };
+  }, null)(PageWithWrapper);
 };
 
 export default PageWrapper;
