@@ -11,6 +11,7 @@ import './style.scss';
 
 type ClimbEventProps = {
   climb: ClimbType,
+  onClick: string => void,
 };
 
 const ClimbEvent = (props: ClimbEventProps) => {
@@ -25,7 +26,10 @@ const ClimbEvent = (props: ClimbEventProps) => {
   return (
     <Mood.Consumer>
       {({ mood }) => (
-        <div className={cx('climb-event', mood && `climb-event__${mood}`)}>
+        <div
+          className={cx('climb-event', mood && `climb-event__${mood}`)}
+          onClick={props.onClick}
+        >
           <React.Fragment>
             <div className="climb-event__header">
               {summary}

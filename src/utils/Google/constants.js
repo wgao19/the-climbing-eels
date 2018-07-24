@@ -5,7 +5,9 @@ export const DISCOVERY_DOCS = [
   'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest',
 ];
 export const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
-export const CALENDAR_ID = '2p39f1doitktvd1fjg0aagjhv8@group.calendar.google.com';
+export const CALENDAR_ID =
+  '2p39f1doitktvd1fjg0aagjhv8@group.calendar.google.com';
+export const BASE_ENDPOINT = 'https://www.googleapis.com/calendar/v3';
 
 export const STATUS = {
   SUCCESS: 200,
