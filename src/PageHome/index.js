@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
-import UpcomingClimbs from './components/UpcomingClimbs';
-import wrapPage from '../widgets/PageWrapper';
+import UpcomingClimbs from 'components/UpcomingClimbs';
+import wrapPage from 'widgets/PageWrapper';
 import './style.scss';
 
 const PageHome = () => {

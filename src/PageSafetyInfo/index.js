@@ -4,7 +4,7 @@
  * */
 
 import React from 'react';
-import wrapPage from '../widgets/PageWrapper';
+import wrapPage from 'widgets/PageWrapper';
 import './style.scss';
 
 const marked = require('marked');

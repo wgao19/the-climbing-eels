@@ -3,9 +3,9 @@
  * */
 import * as React from 'react';
 import cx from 'classnames';
-import Mood from '../../../widgets/Mood';
-import beautifulDateTime from '../../../utils/beautifulDateTime';
-import type { ClimbType } from '../../../types/ClimbTypes';
+import Mood from 'widgets/Mood';
+import beautifulDateTime from 'utils/beautifulDateTime';
+import type { ClimbType } from 'types/ClimbTypes';
 import './style.scss';
 
 type ClimbEventProps = {

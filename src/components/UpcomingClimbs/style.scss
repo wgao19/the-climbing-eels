@@ -1,5 +1,15 @@
-@import '../../../style/colors';
+@import 'colors';
 @import 'mixins';
+
+.upcoming-climbs {
+  &__header {
+    color: $light;
+    text-transform: capitalize;
+    text-align: right;
+    line-height: 4rem;
+  }
+}
+
 .climb-event {
   text-align: left;
   margin: 1.5rem 0;
@@ -29,19 +39,19 @@
     line-height: 1.4rem;
     &--calm {
       background: $calm;
-      box-shadow: rgba($calm, .4) 0 1px 5px 0;
+      box-shadow: rgba($calm, 0.4) 0 1px 5px 0;
     }
     &--warm {
       background: $warm;
-      box-shadow: rgba($warm, .4) 0 1px 5px 0;
+      box-shadow: rgba($warm, 0.4) 0 1px 5px 0;
     }
     &--chill {
       background: $chill;
-      box-shadow: rgba($chill, .4) 0 1px 5px 0;
+      box-shadow: rgba($chill, 0.4) 0 1px 5px 0;
     }
     &--active {
       background: $active;
-      box-shadow: rgba($active, .4) 0 1px 5px 0;
+      box-shadow: rgba($active, 0.4) 0 1px 5px 0;
     }
   }
   &__time,

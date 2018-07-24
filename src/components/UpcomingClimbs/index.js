@@ -2,16 +2,27 @@
  * @flow
  * Intelligent component that loads and displays upcoming climbs
  * */
+
+// libraries
 import * as React from 'react';
 import cx from 'classnames';
 import { connect } from 'react-redux';
-import initGoogle from '../../../utils/Google';
-import ClimbEvent from '../ClimbEvent';
-import Loading from 'widgets/Loading';
-import { loadClimbs } from 'store/climbs/actions';
-import randomWait from 'utils/randomWait';
-import Mood from 'widgets/Mood';
+
+// types
 import type { ClimbType } from 'types/ClimbTypes';
+
+// redux
+import { loadClimbs } from 'store/climbs/actions';
+
+// utils
+import initGoogle from 'utils/Google';
+import randomWait from 'utils/randomWait';
+
+// UI
+import ClimbEvent from './RenderClimbEvent';
+import Loading from 'widgets/Loading';
+import Mood from 'widgets/Mood';
+
 import './style.scss';
 
 type UpcomingClimbsProps = {
