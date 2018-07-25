@@ -22,3 +22,26 @@
     color: $active;
   }
 }
+
+@mixin stamped($width, $color) {
+  position: relative;
+  &:before,
+  &:after {
+    content: '';
+    top: 0;
+    width: $width;
+    height: 100%;
+    position: absolute;
+    background-image: radial-gradient($color $width * 0.3, transparent 0);
+    -webkit-background-size: $width * 0.3 $width * 0.3;
+    background-size: $width $width;
+    z-index: 3; // to mask the labels
+    background-position-y: $width * 0.15;
+  }
+  &:before {
+    left: -$width / 2;
+  }
+  &:after {
+    right: -$width / 2;
+  }
+}

@@ -27,7 +27,7 @@ const ClimbEvent = (props: ClimbEventProps) => {
     <Mood.Consumer>
       {({ mood }) => (
         <div
-          className={cx('climb-event', mood && `climb-event__${mood}`)}
+          className={cx('climb-event', mood && `climb-event--${mood}`)}
           onClick={props.onClick}
         >
           <React.Fragment>
@@ -49,27 +49,34 @@ const ClimbEvent = (props: ClimbEventProps) => {
             </div>
             <div
               className={cx(
-                'climb-event__time',
-                mood && `climb-event__time--${mood}`
+                'climb-event__time-and-location',
+                mood && `climb-event__time-and-location--${mood}`
               )}
             >
-              {displayStartTime} - {displayEndTime}
-            </div>
-            {location && (
               <div
                 className={cx(
-                  'climb-event__location',
-                  mood && `climb-event__location--${mood}`
+                  'climb-event__time',
+                  mood && `climb-event__time--${mood}`
                 )}
               >
-                <a
-                  target="_blank"
-                  href={`https://www.google.com/maps/search/${location}`}
-                >
-                  📍{location}
-                </a>
+                {displayStartTime} - {displayEndTime}
               </div>
-            )}
+              {location && (
+                <div
+                  className={cx(
+                    'climb-event__location',
+                    mood && `climb-event__location--${mood}`
+                  )}
+                >
+                  <a
+                    target="_blank"
+                    href={`https://www.google.com/maps/search/${location}`}
+                  >
+                    📍{location}
+                  </a>
+                </div>
+              )}
+            </div>
             {attendees &&
               attendees.length && (
                 <div className="climb-event__attendees">
