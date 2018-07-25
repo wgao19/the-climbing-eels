@@ -32,7 +32,7 @@ const ClimbEvent = (props: ClimbEventProps) => {
         >
           <React.Fragment>
             <div className="climb-event__header">
-              {summary}
+              <span>{summary}</span>
               {types &&
                 types.map((item, index) => (
                   <div
