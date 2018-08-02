@@ -14,8 +14,12 @@ module.exports = {
   },
   rules: {
     strict: 0,
+    'import/first': 0,
   },
   settings: {
     'import/resolver': 'webpack',
+  },
+  globals: {
+    gapi: 'true',
   },
 };
