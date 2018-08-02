@@ -12,10 +12,9 @@ import { connect } from 'react-redux';
 import type { ClimbType } from 'types/ClimbTypes';
 
 // redux
-import { loadClimbs, apiInitGoogleCalendar } from 'store/climbs/actions';
+import { loadClimbs } from 'store/climbs/actions';
 
 // utils
-import initGoogle from 'utils/Google';
 import randomWait from 'utils/randomWait';
 
 // UI
@@ -36,10 +35,7 @@ class UpcomingClimbs extends React.Component<UpcomingClimbsProps> {
   }
 
   componentDidMount() {
-    initGoogle(async () => {
-      await apiInitGoogleCalendar();
-      randomWait(this.props.loadClimbs);
-    });
+    randomWait(this.props.loadClimbs);
   }
 
   render() {
