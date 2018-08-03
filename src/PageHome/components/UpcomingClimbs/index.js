@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import initGoogle from '../../../utils/Google';
 import ClimbEvent from '../ClimbEvent';
 import Loading from '../../../widgets/Loading';
-import { loadGoogleCalendarClimbs } from '../../../store/climbs/actions';
+import { loadGoogleCalendarClimbs } from 'store/climbs/actions';
 import randomWait from '../../../utils/randomWait';
 
 type UpcomingClimbsProps = { upcomingClimbs: mixed[], loadClimbs: Function };

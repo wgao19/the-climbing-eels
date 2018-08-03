@@ -8,7 +8,7 @@ export type ClimberType = {|
   responseStatus: string,
 |};
 
-export type ClimbType = {|
+export type GoogleCalendarClimbType = {|
   attendees?: ClimberType[],
   created: string,
   creator: GoogleUser,

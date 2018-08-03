@@ -3,9 +3,11 @@ import { createReducer } from '../utils';
 import { LOAD_GOOGLE_CALENDAR_CLIMBS, LOAD_CLIMBS } from './actions';
 import { getDateKey } from './utils';
 import { getGymIdKey } from '../gyms/utils';
-import type { ClimbType } from '../../types/ClimbTypes';
+import type { GoogleCalendarClimbType } from '../../types/ClimbTypes';
 
-export type ClimbState = ClimbType[];
+export type ClimbState = {
+  GoogleCalendarClimbs: GoogleCalendarClimbType[],
+};
 // NOTE: breaking the (old) reducer
 const initialState: ClimbState = {
   GoogleCalendarClimbs: [],
@@ -55,5 +57,5 @@ export default createReducer(
       };
     },
   },
-  initialState,
+  initialState
 );

@@ -12,7 +12,8 @@ import { connect } from 'react-redux';
 import type { ClimbType } from 'types/ClimbTypes';
 
 // redux
-import { loadClimbs } from 'store/climbs/actions';
+import { loadGoogleCalendarClimbs as loadClimbs } from 'store/climbs/actions';
+import { getGoogleCalendarClimbs } from 'store/climbs/selectors';
 
 // utils
 import randomWait from 'utils/randomWait';
@@ -67,7 +68,7 @@ class UpcomingClimbs extends React.Component<UpcomingClimbsProps> {
 export default connect(
   state => {
     return {
-      upcomingClimbs: state.climbs,
+      upcomingClimbs: getGoogleCalendarClimbs(state.climbs),
     };
   },
   { loadClimbs }
