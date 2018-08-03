@@ -19,6 +19,7 @@ const common = {
       {
         test: /\.jsx?/i,
         loader: 'babel-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.png$/,

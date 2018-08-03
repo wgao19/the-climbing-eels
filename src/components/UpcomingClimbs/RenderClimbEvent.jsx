@@ -6,6 +6,7 @@ import cx from 'classnames';
 import Avatar from 'widgets/Avatar';
 import Mood from 'widgets/Mood';
 import beautifulDateTime from 'utils/beautifulDateTime';
+import Paper from '@material-ui/core/Paper';
 import type { ClimbType } from 'types/ClimbTypes';
 import './style.scss';
 
@@ -26,7 +27,7 @@ const ClimbEvent = (props: ClimbEventProps) => {
   return (
     <Mood.Consumer>
       {({ mood }) => (
-        <div
+        <Paper
           className={cx('climb-event', mood && `climb-event--${mood}`)}
           onClick={props.onClick}
         >
@@ -96,7 +97,7 @@ const ClimbEvent = (props: ClimbEventProps) => {
               </div>
             )}
           </React.Fragment>
-        </div>
+        </Paper>
       )}
     </Mood.Consumer>
   );
