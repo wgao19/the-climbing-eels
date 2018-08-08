@@ -9,7 +9,7 @@ const storyLoader = (storyName: string) => {
     case STORIES.JOES:
       return () => import('joes-valley-study-notes/README.md');
     default:
-      return null;
+      return () => null;
   }
 };
 
