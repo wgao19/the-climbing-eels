@@ -1,12 +1,13 @@
 // @flow
-
 import * as React from 'react';
+import cx from 'classnames';
 import marked from 'marked';
+import type { Dom } from 'types/Dom';
 import './style.scss';
 
 type P = {
   loadMarkdown: Function,
-};
+} & Dom;
 type S = {
   file: ?string,
 };
@@ -27,7 +28,7 @@ class MarkdownRender extends React.Component<P, S> {
     return (
       this.state.file && (
         <div
-          className="eels-markdown-render"
+          className={cx('eels-markdown-render', this.props.className)}
           dangerouslySetInnerHTML={{ __html: marked(this.state.file) }}
         />
       )

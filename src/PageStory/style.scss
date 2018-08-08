@@ -5,16 +5,35 @@
   @include grid($field-teal, $field-paper);
   background-size: 4rem 4rem;
   padding: 4rem;
-  &__foreword {
-    color: $light;
-    padding: 5rem 0;
-  }
-  &__story {
-    background: $light;
-    border-radius: 0.4rem;
-    color: $primary;
-    box-shadow: $dark 0 1px 5px 0;
-    opacity: 0.9;
+  &__header,
+  &__story,
+  &__footer {
+    background: $field-paper;
+    box-shadow: rgba($field-light, 0.7) 0.3rem 0.3rem 0 0;
+    border: 0.4rem solid $field-eggplant;
     padding: 1rem;
+    overflow: hidden;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__header {
+    background: $field-paper;
+    border: 0.4rem solid $field-eggplant;
+    padding: 1rem;
+    border-radius: 4px;
+  }
+
+  &__story {
+    color: $primary;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 1.5rem;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 1.5rem;
+  }
+
+  &__footer {
+    text-align: center;
   }
 }

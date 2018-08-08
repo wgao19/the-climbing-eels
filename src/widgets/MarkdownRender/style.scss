@@ -1,17 +1,6 @@
 @import 'colors';
 
 .eels-markdown-render {
-  background: $field-paper;
-  overflow: hidden;
-  color: $primary;
-  padding: 1rem;
-  border: 0.4rem solid $field-eggplant;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 1.5rem;
-  border-bottom-left-radius: 4px;
-  border-bottom-right-radius: 1.5rem;
-  box-shadow: rgba($field-light, 0.7) 0.3rem 0.3rem 0 0;
-
   *:empty:not(img) {
     display: none;
   }
