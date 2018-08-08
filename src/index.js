@@ -11,6 +11,7 @@ import PageHome from './PageHome';
 import PageEvents from './PageEvents';
 import PageSafetyInfo from './PageSafetyInfo';
 import PageStories from './PageStories';
+import PageStory from './PageStory';
 import initGoogle, { initGoogleClient } from 'utils/Google';
 import './style/site.scss';
 
@@ -24,6 +25,7 @@ initGoogle(async () => {
           <Route exact path="/safety-info" component={PageSafetyInfo} />
           <Route exact path="/events" component={PageEvents} />
           <Route exact path="/stories" component={PageStories} />
+          <Route exact path="/story" component={PageStory} />
         </div>
       </Router>
     </Provider>,

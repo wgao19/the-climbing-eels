@@ -1,0 +1,3 @@
+[submodule "stories/joes-valley-study-notes"]
+	path = stories/joes-valley-study-notes
+	url = git@github.com:wgao19/joes-valley-study-notes.git
