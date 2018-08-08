@@ -1,20 +1,20 @@
 @import 'colors.scss';
+@import 'mixins';
 
-.eels-page-stories {
-  color: $light;
-  padding: 2rem;
+.eels-page-story {
+  @include grid($field-teal, $field-paper);
+  background-size: 4rem 4rem;
+  padding: 4rem;
   &__foreword {
     color: $light;
     padding: 5rem 0;
   }
-  &__list-of-stories {}
   &__story {
     background: $light;
-    border-radius: .4rem;
+    border-radius: 0.4rem;
     color: $primary;
     box-shadow: $dark 0 1px 5px 0;
-    opacity: .9;
+    opacity: 0.9;
     padding: 1rem;
   }
 }
-

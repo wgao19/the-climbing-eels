@@ -2,6 +2,7 @@
 
 import * as React from 'react';
 import marked from 'marked';
+import './style.scss';
 
 type P = {
   loadMarkdown: Function,

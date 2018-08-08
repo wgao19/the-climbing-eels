@@ -45,3 +45,31 @@
     right: -$width / 2;
   }
 }
+
+@mixin grid($bg, $gridline) {
+  background-color: $bg;
+  background-image: linear-gradient(
+      0deg,
+      transparent 24%,
+      $gridline 25%,
+      $gridline 26%,
+      transparent 27%,
+      transparent 74%,
+      $gridline 75%,
+      transparent 76%,
+      transparent 77%,
+      transparent
+    ),
+    linear-gradient(
+      90deg,
+      transparent 24%,
+      $gridline 25%,
+      $gridline 26%,
+      transparent 27%,
+      transparent 74%,
+      $gridline 75%,
+      transparent 76%,
+      transparent 77%,
+      transparent
+    );
+}

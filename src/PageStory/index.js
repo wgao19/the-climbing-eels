@@ -12,7 +12,7 @@ type P = { storyName: ?string };
 
 const PageStories = (props: P) => {
   return (
-    <div className="eels-page-stories">
+    <div className="eels-page-story">
       {props.storyName && (
         /** TODO: make dynamic import work with variable directory */
         <MarkdownRender loadMarkdown={storyLoader(props.storyName)} />
