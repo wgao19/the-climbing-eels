@@ -79,6 +79,7 @@ const PageWrapper = (WrappedPage: React.ComponentType<*>) => {
   }
 
   return connect((state, ownProps) => {
+    // $FlowFixMe
     const { mood } = searchStringToQueryObject(ownProps.location.search);
     return {
       mood,
