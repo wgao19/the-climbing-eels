@@ -60,7 +60,7 @@
     "webpack-merge": "^4.1.2"
   },
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build": "git submodule init && git submodule update && webpack --config webpack.config.js",
     "deploy": "git pull --rebase && npm install && npm run build && sh scripts/deploy.sh",
     "dev": "webpack-dev-server"
   }
