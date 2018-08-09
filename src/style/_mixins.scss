@@ -4,8 +4,8 @@
   justify-content: center;
 }
 
-@mixin box-shadow($color) {
-  box-shadow: 5px 10px 5px 10px $color;
+@mixin papercut-shadow($color) {
+  box-shadow: $color 2px 2px 0 0;
 }
 
 @mixin with-mood() {

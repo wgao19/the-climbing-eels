@@ -1,7 +1,8 @@
 @import 'colors';
+@import 'mixins';
 
 .eels-markdown-render {
-  *:empty:not(img) {
+  *:empty:not(img):not(td) {
     display: none;
   }
 
@@ -57,6 +58,29 @@
       display: inline-block;
       width: 1rem;
       margin-left: -1rem;
+    }
+  }
+
+  table {
+    @include papercut-shadow(rgba($field-light, 0.2));
+    border: 1px solid $field-eggplant;
+    border-collapse: separate;
+    border-radius: 4px;
+  }
+  td,
+  th {
+    padding: 5px;
+  }
+  th {
+    background: rgba($field-light, 0.4);
+  }
+  thead > tr {
+    border-bottom: 1px solid $field-eggplant;
+  }
+  tbody > tr {
+    &:nth-child(2n) {
+      // TODO: fix missing cell background color
+      background-color: rgba($field-light, 0.1);
     }
   }
 }
