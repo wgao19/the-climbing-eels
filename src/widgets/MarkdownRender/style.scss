@@ -33,7 +33,13 @@
     font-weight: light;
     border-left: 4px solid $field-corn;
     margin: 0;
-    padding: 0.2rem 0.7rem;
+    padding: 1rem 1.7rem;
+    & > p {
+      display: inline;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid $field-corn;
+      line-height: 1.8rem;
+    }
   }
 
   a {
