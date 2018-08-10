@@ -1,9 +1,5 @@
 @import 'colors';
 
-.eels-breadcrumb {
-  margin-top: 0.5rem;
-  text-align: center;
-}
 .eels-breadcrumb-link {
   display: inline-block;
   text-decoration: none;
@@ -17,19 +13,37 @@
   &--active > span {
     color: $primary;
     border-bottom: 1px solid $primary;
+    cursor: text;
   }
   &--disabled {
     pointer-events: none;
     cursor: not-allowed !important;
     > span {
-      color: rgba($primary, .4);
+      color: rgba($primary, 0.4);
     }
   }
-  &:not(:last-child) {
-    &:after {
-      content: '/';
-      color: $primary;
-      margin: 0.4rem;
+  &--nav {
+    &:not(:last-child) {
+      &:after {
+        content: '/';
+        color: $primary;
+        margin: 0.4rem;
+      }
+    }
+  }
+  &--location {
+    &:not(.eels-breadcrumb-link-active) > span {
+      border-bottom: 1px solid $primary;
+    }
+    &.eels-breadcrumb-link--active > span {
+      border-bottom: none;
+    }
+    &:not(:last-child) {
+      &:after {
+        content: '>';
+        color: $primary;
+        margin: 0.4rem;
+      }
     }
   }
 }

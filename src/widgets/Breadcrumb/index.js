@@ -4,17 +4,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import cx from 'classnames';
+import type { Dom } from 'types/Dom';
 import './style.scss';
+
+type BreadcrumbLink = {
+  text: string,
+  url: string,
+  active?: boolean,
+  disabled?: boolean,
+};
 
 type BreadcrumbProps = {
   links: Link[],
+  breadcrumbType?: string,
+} & Dom;
+
+export const BREADCRUMB_TYPE = {
+  NAV: 'nav',
+  LOCATION: 'location',
 };
 
 const Breadcrumb = (props: BreadcrumbProps) => {
-  const { links = [] } = props;
+  const { links = [], breadcrumbType, className } = props;
 
   return (
-    <div className="eels-breadcrumb">
+    <div className={cx('eels-breadcrumb', className)}>
       {links.map((link, index) => (
         <Link
           key={index}
@@ -22,7 +36,8 @@ const Breadcrumb = (props: BreadcrumbProps) => {
             'eels-breadcrumb-link',
             (link.active || window.location.pathname === link.url) &&
               'eels-breadcrumb-link--active',
-            link.disabled && 'eels-breadcrumb-link--disabled'
+            link.disabled && 'eels-breadcrumb-link--disabled',
+            breadcrumbType && `eels-breadcrumb-link--${breadcrumbType}`
           )}
           to={link.url}
         >

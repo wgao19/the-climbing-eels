@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'mixins';
+@import 'variables';
 
 .eels-markdown-render {
   *:empty:not(img):not(td) {
@@ -63,6 +64,11 @@
 
   table {
     @include papercut-shadow(rgba($field-light, 0.2));
+    // render full size window on smaller screen (looks better)
+    // TODO: create a mixin for media screen?
+    @media screen and (max-width: $eels-break-small) {
+      width: 100%;
+    }
     border: 1px solid $field-eggplant;
     border-collapse: separate;
     border-radius: 4px;

@@ -29,12 +29,15 @@
   &__header {
     font-size: 2rem;
     color: $primary;
-    text-shadow: 2px 2px rgba($shade, .4);
+    text-shadow: 2px 2px rgba($shade, 0.4);
   }
   &__text {
     margin-top: 0.5rem;
     color: rgba($primary, 0.7);
     @include with-mood;
+  }
+  &__nav {
+    margin-top: 0.5rem;
   }
   &__instagram-link {
     width: 1.5rem;
