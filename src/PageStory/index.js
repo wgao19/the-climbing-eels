@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import cx from 'classnames';
 import storyLoader from './utils/storyLoader';
 import toQuery from 'utils/searchStringToQueryObject';
 import MarkdownRender from 'widgets/MarkdownRender';
@@ -46,7 +47,8 @@ const PageStory = (props: P) => {
           className="eels-page-story__story"
         />
       )}
-      <div className="eels-page-story__footer">footer</div>
+      {/** TODO: move to footer */}
+      <div className="eels-page-story__footer">us eels ♥ climbing</div>
     </div>
   );
 };
