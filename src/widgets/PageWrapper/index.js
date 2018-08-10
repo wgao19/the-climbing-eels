@@ -11,7 +11,7 @@ import searchStringToQueryObject from 'utils/searchStringToQueryObject';
 // $FlowFixMe
 import Docked from 'react-scroll-docked';
 import Header from '../Header';
-import Breadcrumb from '../Breadcrumb';
+import Breadcrumb, { BREADCRUMB_TYPE } from '../Breadcrumb';
 import InstagramLink from '../InstagramLink';
 import MoodContext from '../Mood';
 import './style.scss';
@@ -67,7 +67,11 @@ const PageWrapper = (WrappedPage: React.ComponentType<*>) => {
                     </div>
                   )}
                 </MoodContext.Consumer>
-                <Breadcrumb links={links} />
+                <Breadcrumb
+                  className="page-home-top-content__nav"
+                  breadcrumbType={BREADCRUMB_TYPE.NAV}
+                  links={links}
+                />
                 <InstagramLink className="page-home-top-content__instagram-link" />
               </div>
             </div>

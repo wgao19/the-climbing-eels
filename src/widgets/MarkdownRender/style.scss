@@ -1,5 +1,6 @@
 @import 'colors';
 @import 'mixins';
+@import 'variables';
 
 .eels-markdown-render {
   *:empty:not(img):not(td) {
@@ -32,7 +33,13 @@
     font-weight: light;
     border-left: 4px solid $field-corn;
     margin: 0;
-    padding: 0.2rem 0.7rem;
+    padding: 1rem 1.7rem;
+    & > p {
+      display: inline;
+      padding-bottom: 0.2rem;
+      border-bottom: 1px solid $field-corn;
+      line-height: 1.8rem;
+    }
   }
 
   a {
@@ -63,6 +70,11 @@
 
   table {
     @include papercut-shadow(rgba($field-light, 0.2));
+    // render full size window on smaller screen (looks better)
+    // TODO: create a mixin for media screen?
+    @media screen and (max-width: $eels-break-small) {
+      width: 100%;
+    }
     border: 1px solid $field-eggplant;
     border-collapse: separate;
     border-radius: 4px;

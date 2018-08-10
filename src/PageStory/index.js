@@ -2,27 +2,53 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import MarkdownRender from 'widgets/MarkdownRender';
+import cx from 'classnames';
 import storyLoader from './utils/storyLoader';
 import toQuery from 'utils/searchStringToQueryObject';
+import MarkdownRender from 'widgets/MarkdownRender';
+import Breadcrumb, { BREADCRUMB_TYPE } from 'widgets/Breadcrumb';
 import './style.scss';
 
 type P = { storyName: ?string };
+
+const locationLinks = [
+  {
+    text: 'the climbing eels',
+    url: '/',
+  },
+  {
+    text: 'stories',
+    url: '/stories',
+  },
+  {
+    text: "joe's valley study notes",
+    active: true,
+    url: '/story?s=joes-valley-study-notes',
+  },
+];
 
 const PageStory = (props: P) => {
   return (
     <div className="eels-page-story">
       <div className="eels-page-story__header">
-        the climbing eels > stories > joes valley
+        <Breadcrumb
+          links={locationLinks}
+          breadcrumbType={BREADCRUMB_TYPE.LOCATION}
+        />
       </div>
       {props.storyName && (
-        /** TODO: make dynamic import work with variable directory */
+        /**
+         * TODO:
+         * 1. make dynamic import work with variable directory
+         * 2. hash key story name (issue #5)
+         */
         <MarkdownRender
           loadMarkdown={storyLoader(props.storyName)}
           className="eels-page-story__story"
         />
       )}
-      <div className="eels-page-story__footer">footer</div>
+      {/** TODO: move to footer */}
+      <div className="eels-page-story__footer">us eels ♥ climbing</div>
     </div>
   );
 };

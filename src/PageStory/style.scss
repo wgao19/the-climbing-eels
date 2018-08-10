@@ -1,10 +1,17 @@
 @import 'colors.scss';
 @import 'mixins';
+@import 'variables';
 
 .eels-page-story {
   @include grid($field-teal, $field-paper);
   background-size: 4rem 4rem;
-  padding: 4rem;
+  @media screen and (max-width: $eels-break-small) {
+    padding: 1rem;
+  }
+  @media screen and (min-width: $eels-break-small) {
+    padding: 4rem;
+  }
+
   &__header,
   &__story,
   &__footer {
@@ -13,6 +20,7 @@
     border: 0.4rem solid $field-eggplant;
     padding: 1rem;
     overflow: hidden;
+    border-radius: 4px;
     &:not(:last-child) {
       margin-bottom: 1rem;
     }
@@ -22,18 +30,16 @@
     background: $field-paper;
     border: 0.4rem solid $field-eggplant;
     padding: 1rem;
-    border-radius: 4px;
   }
 
   &__story {
     color: $primary;
-    border-top-left-radius: 4px;
     border-top-right-radius: 1.5rem;
-    border-bottom-left-radius: 4px;
     border-bottom-right-radius: 1.5rem;
   }
 
   &__footer {
     text-align: center;
+    color: $field-light;
   }
 }
