@@ -43,6 +43,7 @@
     "eslint-plugin-flowtype": "^2.46.1",
     "eslint-plugin-import": "^2.9.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
     "flow-bin": "^0.77.0",
     "html-loader": "^0.5.5",
     "markdown-loader": "^2.0.2",

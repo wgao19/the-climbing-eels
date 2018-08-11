@@ -26,7 +26,7 @@ const common = {
         exclude: /node_modules/,
       },
       {
-        test: /\.png$/,
+        test: /\.(png|jpg)$/,
         use: 'file-loader',
       },
       {
