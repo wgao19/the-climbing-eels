@@ -16,26 +16,25 @@
   &__story,
   &__footer {
     background: $field-paper;
-    box-shadow: rgba($field-light, 0.7) 0.3rem 0.3rem 0 0;
-    border: 0.4rem solid $field-eggplant;
-    padding: 1rem;
     overflow: hidden;
     border-radius: 4px;
     &:not(:last-child) {
       margin-bottom: 1rem;
     }
   }
-
-  &__header {
-    background: $field-paper;
-    border: 0.4rem solid $field-eggplant;
+  &__header,
+  &__footer {
     padding: 1rem;
+    box-shadow: rgba($field-paper, 0.4) 0.3rem 0.3rem 0 0;
   }
 
   &__story {
+    @include stamped(3rem, $field-teal);
     color: $primary;
     border-top-right-radius: 1.5rem;
     border-bottom-right-radius: 1.5rem;
+    border: none;
+    padding: 2rem;
   }
 
   &__footer {
