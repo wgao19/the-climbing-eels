@@ -6,10 +6,10 @@ import cx from 'classnames';
 import storyLoader from './utils/storyLoader';
 import toQuery from 'utils/searchStringToQueryObject';
 import MarkdownRender from 'widgets/MarkdownRender';
-import Breadcrumb, { BREADCRUMB_TYPE } from 'widgets/Breadcrumb';
-import './style.scss';
+import wrapWithFieldNotes from 'components/FieldNotesWrapper';
+import { Dom } from 'types/Dom';
 
-type P = { storyName: ?string };
+type P = { storyName: ?string } & Dom;
 
 const locationLinks = [
   {
@@ -29,13 +29,7 @@ const locationLinks = [
 
 const PageStory = (props: P) => {
   return (
-    <div className="eels-page-story">
-      <div className="eels-page-story__header">
-        <Breadcrumb
-          links={locationLinks}
-          breadcrumbType={BREADCRUMB_TYPE.LOCATION}
-        />
-      </div>
+    <div className={cx('eels-page-story', props.className)}>
       {props.storyName && (
         /**
          * TODO:
@@ -47,8 +41,6 @@ const PageStory = (props: P) => {
           className="eels-page-story__story"
         />
       )}
-      {/** TODO: move to footer */}
-      <div className="eels-page-story__footer">us eels ♥ climbing</div>
     </div>
   );
 };
@@ -59,4 +51,10 @@ export default connect((state, ownProps) => {
   return {
     storyName: query.s,
   };
-})(withRouter(PageStory));
+})(
+  withRouter(
+    wrapWithFieldNotes(PageStory, {
+      locationLinks,
+    })
+  )
+);

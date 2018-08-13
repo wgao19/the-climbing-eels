@@ -1,8 +1,8 @@
-@import 'colors.scss';
+@import 'colors';
 @import 'mixins';
 @import 'variables';
 
-.eels-page-story {
+.page-field-notes {
   @include grid($field-teal, $field-paper);
   background-size: 4rem 4rem;
   @media screen and (max-width: $eels-break-small) {
@@ -13,7 +13,7 @@
   }
 
   &__header,
-  &__story,
+  &__content,
   &__footer {
     background: $field-paper;
     overflow: hidden;
@@ -22,13 +22,14 @@
       margin-bottom: 1rem;
     }
   }
+
   &__header,
   &__footer {
     padding: 1rem;
     box-shadow: rgba($field-paper, 0.4) 0.3rem 0.3rem 0 0;
   }
 
-  &__story {
+  &__content {
     @include stamped(3rem, $field-teal);
     color: $primary;
     border-top-right-radius: 1.5rem;
